@@ -32,24 +32,20 @@ export const SEARCH: Page = {
 }
 
 // Links
-export const LINKS: Links = [
-  { 
-    TEXT: "Home", 
-    HREF: "/", 
-  },
-  { 
-    TEXT: "Work", 
-    HREF: "/work", 
-  },
-  { 
-    TEXT: "Blog", 
-    HREF: "/blog", 
-  },
-  { 
-    TEXT: "Projects", 
-    HREF: "/projects", 
-  },
-]
+export const NAV_LINKS = {
+  es: [
+    { href: "/es", label: "Inicio" },
+    { href: "/es/projects", label: "Proyectos" },
+    { href: "/es/experiencias", label: "Experiencias" },
+    { href: "/es/contacto", label: "Contacto" },
+  ],
+  en: [
+    { href: "/en", label: "Home" },
+    { href: "/en/projects", label: "Projects" },
+    { href: "/en/experiences", label: "Experiences" },
+    { href: "/en/contact", label: "Contact" },
+  ],
+};
 
 // Socials
 export const SOCIALS: Socials = [
