@@ -34,16 +34,16 @@ export const SEARCH: Page = {
 // Links
 export const NAV_LINKS = {
   es: [
-    { href: "/es", label: "Inicio" },
-    { href: "/es/projects", label: "Proyectos" },
-    { href: "/es/experiencias", label: "Experiencias" },
-    { href: "/es/contacto", label: "Contacto" },
+    { HREF: "/es", TEXT: "Inicio" },
+    { HREF: "/es/projects", TEXT: "Proyectos" },
+    { HREF: "/es/experience", TEXT: "Experiencia" },
+    { HREF: "/es/contact", TEXT: "Contacto" },
   ],
   en: [
-    { href: "/en", label: "Home" },
-    { href: "/en/projects", label: "Projects" },
-    { href: "/en/experiences", label: "Experiences" },
-    { href: "/en/contact", label: "Contact" },
+    { HREF: "/en", TEXT: "Home" },
+    { HREF: "/en/projects", TEXT: "Projects" },
+    { HREF: "/en/experience", TEXT: "Experience" },
+    { HREF: "/en/contact", TEXT: "Contact" },
   ],
 };
 
