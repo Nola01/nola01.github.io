@@ -1,9 +1,15 @@
 ---
-import { SITE, LINKS } from "@consts"
+import { SITE, NAV_LINKS } from "@consts"
 import { cn } from "@lib/utils"
-const { pathname } = Astro.url
-const subpath = pathname.match(/[^/]+/g)
 import Container from "@components/Container.astro"
+const { pathname } = Astro.url
+const lang = Astro.url.pathname.startsWith("/en") ? "en" : "es";
+const links = NAV_LINKS[lang as keyof typeof NAV_LINKS];
+const subpath = pathname.match(/[^/]+/g)
+const isEn = lang === "en";
+const toggleLangPath = isEn 
+  ? pathname.replace("/en", "/es") 
+  : pathname.replace("/es", "/en");
 ---
 
 <header id="header" class="fixed top-0 w-full h-16 z-50 ">
@@ -23,7 +29,7 @@ import Container from "@components/Container.astro"
     <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
       <nav class="hidden md:flex items-center justify-center text-sm gap-1">
         {
-          LINKS.map((LINK) => (
+          links.map((LINK) => (
             <a href={LINK.HREF} class={cn("h-8 rounded-full px-3 text-current", "flex items-center justify-center", "transition-colors duration-300 ease-in-out", pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF ? "bg-black dark:bg-white text-white dark:text-black" : "hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white")}>
               {LINK.TEXT}
             </a>
@@ -33,6 +39,11 @@ import Container from "@components/Container.astro"
     </div>
 
     <div class="buttons absolute right-0 top-1/2 -translate-y-1/2 flex gap-1">
+      <a href={toggleLangPath} 
+        aria-label="change-language" 
+        class={cn("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out", "text-xs font-bold")}>
+        {isEn ? "ES" : "EN"}
+      </a>
       <a href="/search" aria-label={`Search blog posts and projects on ${SITE.TITLE}`} class={cn("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out", pathname === "/search" || "/" + subpath?.[0] === "/search" ? "pointer-events-none bg-black dark:bg-white text-white dark:text-black" : "")}>
         <svg class="size-full">
           <use href="/ui.svg#search"></use>
@@ -100,4 +111,6 @@ import Container from "@components/Container.astro"
 
   document.addEventListener("astro:after-swap", initializeDrawerButton)
   initializeDrawerButton()
+
+
 </script>
