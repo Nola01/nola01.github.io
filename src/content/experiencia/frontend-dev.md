@@ -5,7 +5,6 @@ dateStart: "03/2022"
 dateEnd: "09/2022"
 visible: true
 draft: false
-# Este campo es clave: le decimos que NO genere botón de leer más
 hasDetail: false 
 ---
 

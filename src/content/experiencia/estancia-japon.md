@@ -5,7 +5,7 @@ dateStart: "09/2024"
 dateEnd: "07/2025"
 visible: true
 draft: false
-hasDetail: true # Este SÍ tendrá botón
+hasDetail: true
 ---
 
 - Asignaturas cursadas.

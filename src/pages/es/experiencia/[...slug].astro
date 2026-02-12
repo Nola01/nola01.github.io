@@ -3,9 +3,8 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import PageLayout from '@layouts/PageLayout.astro';
 import Container from "@components/Container.astro";
 
-// 1. Generamos las rutas dinámicas para cada experiencia
 export async function getStaticPaths() {
-  const experiences = await getCollection('experiencia'); // Asegúrate que en config.ts se llame 'experiencia' o 'work'
+  const experiences = await getCollection('experiencia');
   return experiences.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },

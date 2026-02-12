@@ -1,59 +1,50 @@
 ---
-import { getCollection } from "astro:content"
-import PageLayout from "@layouts/PageLayout.astro"
-import TopLayout from "@layouts/TopLayout.astro"
-import BottomLayout from "@layouts/BottomLayout.astro"
-import { WORK } from "@consts"
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
 
-const collection = await getCollection("work")
-
-collection.sort((a, b) => new Date(b.data.dateStart).getTime() - new Date(a.data.dateStart).getTime())
-
-const work = await Promise.all(
-  collection.map(async (item) => {
-    const { Content } = await item.render()
-    return { ...item, Content }
-  })
-)
-
-function formatWorkDate(input: Date | string) {
-  if (typeof input === "string") return input
-
-  const month = input.toLocaleDateString("en-US", {
-    month: "short",
-  })
-
-  const year = new Date(input).getFullYear()
-  return `${month} ${year}`
-}
+const collection = (await getCollection("experiencia"))
+  .sort((a, b) => new Date(b.data.dateStart).getTime() - new Date(a.data.dateStart).getTime());
 ---
 
-<PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
-  <TopLayout>
-    <div class="animate page-heading">
-      {WORK.TITLE}
-    </div>
-  </TopLayout>
-  <BottomLayout>
-    <ul>
-      { 
-        work.map((entry) => (
-          <li class="animate border-b border-black/10 dark:border-white/25 mt-4 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none">
-            <div class="text-sm uppercase mb-4">
-              {formatWorkDate(entry.data.dateStart)} - {formatWorkDate(entry.data.dateEnd)}
+<PageLayout title="Experiencia" description="Mi trayectoria profesional y académica">
+  <Container size="md">
+    <div class="space-y-10 mt-10">
+      <h1 class="animate font-bold text-3xl">Experiencia</h1>
+      
+      <ul class="animate flex flex-col gap-8">
+        {collection.map((entry) => (
+          <li class="relative border-l-2 border-black/10 dark:border-white/10 pl-6 py-2 hover:border-black/50 dark:hover:border-white/50 transition-colors">
+            <span class="absolute -left-[9px] top-3 h-4 w-4 rounded-full bg-white dark:bg-black border-2 border-black/50 dark:border-white/50"></span>
+            
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+              <h3 class="font-bold text-lg text-black dark:text-white">
+                {entry.data.role}
+              </h3>
+              <span class="text-sm opacity-75 font-mono">
+                {entry.data.dateStart} — {entry.data.dateEnd || "Actualidad"}
+              </span>
             </div>
-            <div class="text-black dark:text-white font-semibold">
+            
+            <p class="font-medium opacity-90 mt-1">
               {entry.data.company}
+            </p>
+            
+            <div class="mt-4 text-sm opacity-75 line-clamp-3">
+              {entry.body}
             </div>
-            <div class="text-sm font-semibold">
-              {entry.data.role}
-            </div>
-            <article class="prose dark:prose-invert">
-              <entry.Content />
-            </article>
+
+            {entry.data.hasDetail && (
+              <a 
+                href={`/es/experiencia/${entry.slug}`}
+                class="inline-block mt-4 text-sm font-semibold underline decoration-dashed hover:decoration-solid"
+              >
+                Ver historia completa y fotos &rarr;
+              </a>
+            )}
           </li>
-        ))
-      }
-    </ul>
-  </BottomLayout>
+        ))}
+      </ul>
+    </div>
+  </Container>
 </PageLayout>
