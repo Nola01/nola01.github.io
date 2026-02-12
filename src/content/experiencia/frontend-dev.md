@@ -1,5 +1,5 @@
 ---
-company: "Bosonit"
+company: "Bosonit — Jaén, España"
 role: "Desarrollador Frontend Junior"
 dateStart: "03/2022"
 dateEnd: "09/2022"
@@ -8,6 +8,6 @@ draft: false
 hasDetail: false 
 ---
 
-Primer periodo de tres meses formandome en desarrollo web con Javascript, Typescript y Angular.
+Primer periodo de tres meses de formación en desarrollo web con Javascript, Typescript y Angular.
 
-Segundo periodo de tres meses en un equipo de trabajo real para el desarrollo de una página web a nivel europeo. Desarrollo de interfaces de usuario utilizando Angular y Typescript. Optimización de rendimiento web y colaboración con el equipo de diseño para implementar la identidad visual de la marca.
+Segundo periodo de tres meses en un equipo de trabajo real para el desarrollo de una página web a nivel europeo. Desarrollo frontend en colaboración con el equipo de backend y diseño.
