@@ -35,9 +35,9 @@ export const SEARCH: Page = {
 export const NAV_LINKS = {
   es: [
     { HREF: "/es", TEXT: "Inicio" },
-    { HREF: "/es/projects", TEXT: "Proyectos" },
-    { HREF: "/es/experience", TEXT: "Experiencia" },
-    { HREF: "/es/contact", TEXT: "Contacto" },
+    { HREF: "/es/proyectos", TEXT: "Proyectos" },
+    { HREF: "/es/experiencia", TEXT: "Experiencia" },
+    { HREF: "/es/contacto", TEXT: "Contacto" },
   ],
   en: [
     { HREF: "/en", TEXT: "Home" },

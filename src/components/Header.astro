@@ -2,14 +2,45 @@
 import { SITE, NAV_LINKS } from "@consts"
 import { cn } from "@lib/utils"
 import Container from "@components/Container.astro"
-const { pathname } = Astro.url
-const lang = Astro.url.pathname.startsWith("/en") ? "en" : "es";
-const links = NAV_LINKS[lang as keyof typeof NAV_LINKS];
-const subpath = pathname.match(/[^/]+/g)
+const { pathname } = Astro.url;
+const lang = pathname.startsWith("/en") ? "en" : "es";
+const targetLang = lang === "es" ? "en" : "es";
+
+// 1. Obtenemos las listas de ambos idiomas
+const currentLinks = NAV_LINKS[lang as keyof typeof NAV_LINKS];
+const targetLinks = NAV_LINKS[targetLang as keyof typeof NAV_LINKS];
+
+// 2. Buscamos en qué índice del menú estamos actualmente
+// Limpiamos barras finales para evitar errores de coincidencia
+const cleanPath = pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+const currentIndex = currentLinks.findIndex(link => 
+  link.HREF === cleanPath || link.HREF === pathname
+);
+
+let toggleLangPath;
+
+if (currentIndex !== -1) {
+  // Si la página está en el menú, saltamos a su equivalente exacta
+  toggleLangPath = targetLinks[currentIndex].HREF;
+} else {
+  // Si es una subpágina (como un proyecto individual), intentamos traducir la base
+  if (pathname.includes("/proyectos") || pathname.includes("/projects")) {
+    toggleLangPath = lang === "es" 
+      ? pathname.replace("/es/proyectos", "/en/projects") 
+      : pathname.replace("/en/projects", "/es/proyectos");
+  } else if (pathname.includes("/experiencia") || pathname.includes("/experience")) {
+    toggleLangPath = lang === "es" 
+      ? pathname.replace("/es/experiencia", "/en/experience") 
+      : pathname.replace("/en/experience", "/es/experiencia");
+  } else {
+    // Si no sabemos dónde estamos, volvemos a la Home del otro idioma para evitar el 404
+    toggleLangPath = lang === "es" ? "/en" : "/es";
+  }
+}
+
 const isEn = lang === "en";
-const toggleLangPath = isEn 
-  ? pathname.replace("/en", "/es") 
-  : pathname.replace("/es", "/en");
+const links = currentLinks;
+const subpath = pathname.match(/[^/]+/g);
 ---
 
 <header id="header" class="fixed top-0 w-full h-16 z-50 ">
