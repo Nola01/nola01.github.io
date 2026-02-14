@@ -6,6 +6,7 @@ dateEnd: "06/2026"
 visible: true
 draft: false
 hasDetail: true
+description: "Grado en Ingeniería Informática en la Universidad de Jaén"
 ---
 
 - Asignaturas cursadas

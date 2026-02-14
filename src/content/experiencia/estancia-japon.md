@@ -1,11 +1,12 @@
 ---
-company: "Ritsumeikan University"
+company: "Ritsumeikan University — Osaka, Japón"
 role: "Estudiante de Ciencia de Datos"
 dateStart: "09/2024"
 dateEnd: "07/2025"
 visible: true
 draft: false
 hasDetail: true
+description: "Una estancia de un año como estudiante internacional en Japón en el area de la ciencia de datos de la Ritsumeikan University"
 ---
 
 Mi estancia en la [Ritsumeikan University](https://en.ritsumei.ac.jp) no fue solo un intercambio académico, sino una inmersión total en la cultura japonesa.

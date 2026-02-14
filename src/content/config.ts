@@ -34,6 +34,7 @@ const experiencia = defineCollection({
     visible: z.boolean().optional(),
     draft: z.boolean().optional(),
     hasDetail: z.boolean().optional(),
+    description: z.string()
   }),
 });
 

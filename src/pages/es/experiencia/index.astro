@@ -11,7 +11,7 @@ const collection = (await getCollection("experiencia"))
   <Container size="md">
     <div class="space-y-10 pt-32">
       <h1 class="animate font-bold text-3xl">Experiencia</h1>
-      
+        
       <ul class="animate flex flex-col gap-8">
         {collection.map((entry) => (
           <li class="relative border-l-2 border-black/10 dark:border-white/10 pl-6 py-2 hover:border-black/50 dark:hover:border-white/50 transition-colors">
@@ -30,8 +30,9 @@ const collection = (await getCollection("experiencia"))
               {entry.data.company}
             </p>
             
+            {/* CAMBIO AQUÍ: Ahora usamos description en lugar de body */}
             <div class="mt-4 text-sm opacity-75 line-clamp-3">
-              {entry.body}
+              {entry.data.description}
             </div>
 
             {entry.data.hasDetail && (
