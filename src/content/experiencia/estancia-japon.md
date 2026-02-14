@@ -16,14 +16,14 @@ El campus de Osaka-Ibaraki es impresionante. Cuenta con unas instalaciones de va
 Tuve la oportunidad de convivir con otros estudiantes internacionales, así como conocerlos en la BBP ([Beyond Borders Plaza](https://www.ritsumei.ac.jp/bbp/)), un espacio de la universidad gestionado en gran parte por los propios alumnos. Aquí, entre otras actividades, pude participar en un intercambio lingüístico y cultural con otros estudiantes, en los que yo les enseñaba español y la cultura española mientras ellos hacían lo propio con su país.
 
 ![Campus de Ritsumeikan](/images/ritsumeikan-campus.jpg)
-*Vista principal del campus durante el otoño.*
+*Vista principal del campus de Osaka-Ibaraki*
 
 ### 📚 Asignaturas Cursadas y Retos Internacionales
 Toda la formación académica fue impartida íntegramente en **inglés**, lo que supuso un doble desafío: asimilar conceptos técnicos complejos y defenderlos en presentaciones y exámenes en un idioma extranjero.
 
 Me especialicé en materias de vanguardia como **Data Science**, **Image Processing** y **Pattern Recognition**.
 * El enfoque fue muy práctico: gran parte de la evaluación consistió en desarrollar soluciones reales en equipos multiculturales, colaborando tanto con estudiantes japoneses como internacionales.
-* *Nota: Algunos de los resultados técnicos de estas asignaturas se pueden ver detallados en la sección de [Proyectos](/es/proyectos).*
+* Algunos de los resultados técnicos de estas asignaturas se pueden ver detallados en la sección de [Proyectos](/es/proyectos).
 
 Además, complementé mi perfil técnico con asignaturas de **Inteligencia Artificial**, **Diseño de Software** y **Ética Profesional**, lo que me aportó una visión más holística y humana de la ingeniería.
 
