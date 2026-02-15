@@ -22,11 +22,11 @@ Tuve la oportunidad de convivir con otros estudiantes internacionales, así como
 ### 📚 Asignaturas Cursadas y Retos Internacionales
 Toda la formación académica fue impartida íntegramente en **inglés**, lo que supuso un doble desafío: asimilar conceptos técnicos complejos y defenderlos en presentaciones y exámenes en un idioma extranjero.
 
-Me especialicé en materias de vanguardia como **Data Science**, **Image Processing** y **Pattern Recognition**.
+Me formé en materias punteras como **Data Science**, **Image Processing** y **Pattern Recognition**.
 * El enfoque fue muy práctico: gran parte de la evaluación consistió en desarrollar soluciones reales en equipos multiculturales, colaborando tanto con estudiantes japoneses como internacionales.
 * Algunos de los resultados técnicos de estas asignaturas se pueden ver detallados en la sección de [Proyectos](/es/proyectos).
 
-Además, complementé mi perfil técnico con asignaturas de **Inteligencia Artificial**, **Diseño de Software** y **Ética Profesional**, lo que me aportó una visión más holística y humana de la ingeniería.
+Además, complementé mi perfil técnico con asignaturas de **Inteligencia Artificial**, **Diseño de Software** y **Ética Profesional**. Esta última fue fundamental para entender la responsabilidad social que conlleva nuestro trabajo y cómo cada decisión técnica acaba teniendo un impacto en la sociedad.
 
 ### 🍜 Cultura y Adaptación
 Más allá del código, vivir en Japón me enseñó a adaptarme. Desde entender el sistema de transporte hasta respetar las normas sociales no escritas.
@@ -132,7 +132,7 @@ Aunque residía en Ibaraki, una ciudad a medio camino entre Osaka y Kyoto, aprov
 <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
     <img src="/images/kyoto-rural.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
     <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    🔰 Tienda Honda — Kyoto
+    🔰 Taller Honda — Kyoto
     </div>
 </div>
 
