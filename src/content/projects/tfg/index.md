@@ -1,14 +1,14 @@
 ---
 title: "Gestión Inteligente de Estacionamiento"
 description: "Desarrollo de una solución móvil multiplataforma diseñada para la gestión inteligente del estacionamiento en la Universidad de Jaén"
-date: "15 feb 2026"
+date: "Feb 15 2026"
 tags:
   - Angular
   - TypeScript
   - SpringBoot
   - Java
   - SQL
-repoURL: "https://github.com/tu-usuario/tfg-parking"
+repoURL: ""
 ---
 
 ### 🚀 Sobre el proyecto
@@ -21,4 +21,4 @@ Consiste en una solución móvil diseñada para la **gestión inteligente del es
 * **Backend/IA:** Python con librerías de visión artificial.
 * **Base de datos:** SQLite para la gestión local de datos.
 
-> Puedes ver el código completo y la documentación técnica en mi repositorio de [GitHub](https://github.com/tu-usuario/tfg-parking).
+El código completo y la documentación técnica estarán próximamente disponibles en un repositorio de GitHub.
