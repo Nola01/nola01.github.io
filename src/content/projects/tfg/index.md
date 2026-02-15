@@ -5,7 +5,7 @@ date: "Feb 15 2026"
 tags:
   - Angular
   - TypeScript
-  - SpringBoot
+  - Spring Boot
   - Java
   - SQL
 repoURL: ""

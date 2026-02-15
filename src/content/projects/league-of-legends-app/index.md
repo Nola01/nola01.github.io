@@ -7,7 +7,6 @@ tags:
   - Firebase
   - API REST
   - JavaScript
-  - Tailwind
 repoURL: "https://github.com/Nola01/league-of-legends-app"
 ---
 

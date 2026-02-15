@@ -6,7 +6,7 @@ tags:
   - Angular
   - TypeScript
   - RxJS
-  - REST API
+  - API REST
   - Bootstrap
 repoURL: ""
 ---
