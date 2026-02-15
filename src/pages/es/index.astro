@@ -66,10 +66,30 @@ const stack = [
   </div>
 
   <script is:inline src="/js/bg.js"></script>
+  <script>
+  // Este evento se dispara en cuanto Astro detecta que vas a cambiar de página
+  document.addEventListener("astro:before-preparation", () => {
+    const galaxy = document.getElementById("galaxy");
+    const planet = document.getElementById("planetcont");
+    const particles = [
+      document.getElementById("particles1"),
+      document.getElementById("particles2"),
+      document.getElementById("particles3")
+    ];
+
+    // Usamos display: none para detener el renderizado por completo
+    if (galaxy) galaxy.style.display = "none";
+    if (planet) planet.style.display = "none";
+    
+    particles.forEach(p => {
+      if (p) p.style.display = "none";
+    });
+  });
+</script>
   
   <!-- HERO -->
   <section class="relative h-screen w-full">
-    <div id="planetcont" class='animate absolute inset-0 top-1/4 overflow-hidden' transition:persist>
+    <div id="planetcont" class='animate absolute inset-0 top-1/4 overflow-hidden'>
       <div id="crescent" class='absolute top-0 left-1/2 -translate-x-1/2 w-[250vw] min-h-[100vh] aspect-square rounded-full p-[1px] bg-gradient-to-b from-black/25 dark:from-white/75 from-0% to-transparent to-5%'>
         <div id="planet" class='w-full h-full bg-white dark:bg-black rounded-full p-[1px] overflow-hidden flex justify-center'>
           <div id="blur" class='w-full h-20 rounded-full bg-neutral-900/25 dark:bg-white/25 blur-3xl'/>
