@@ -1,59 +1,81 @@
 ---
-import { getCollection } from "astro:content"
-import PageLayout from "@layouts/PageLayout.astro"
-import TopLayout from "@layouts/TopLayout.astro"
-import BottomLayout from "@layouts/BottomLayout.astro"
-import { WORK } from "@consts"
+import PageLayout from "@layouts/PageLayout.astro";
+import TopLayout from "@layouts/TopLayout.astro";
+import BottomLayout from "@layouts/BottomLayout.astro";
 
-const collection = await getCollection("work")
-
-collection.sort((a, b) => new Date(b.data.dateStart).getTime() - new Date(a.data.dateStart).getTime())
-
-const work = await Promise.all(
-  collection.map(async (item) => {
-    const { Content } = await item.render()
-    return { ...item, Content }
-  })
-)
-
-function formatWorkDate(input: Date | string) {
-  if (typeof input === "string") return input
-
-  const month = input.toLocaleDateString("en-US", {
-    month: "short",
-  })
-
-  const year = new Date(input).getFullYear()
-  return `${month} ${year}`
-}
+const contactLinks = [
+  {
+    label: "Email",
+    href: "mailto:jnolrom@gmail.com",
+    text: "jnolrom@gmail.com",
+    icon: "email"
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/juanma-nolasco",
+    text: "Perfil de LinkedIn",
+    icon: "linkedin"
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/Nola01",
+    text: "Nola01",
+    icon: "github"
+  }
+];
 ---
 
-<PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
+<PageLayout title="Contacto" description="Vías de contacto y redes sociales.">
   <TopLayout>
-    <div class="animate page-heading">
-      {WORK.TITLE}
+    <div class="animate">
+      <h1 class="text-3xl font-semibold text-black dark:text-white mt-2">
+        Contacto
+      </h1>
+      <p class="mt-4 opacity-75">
+        Por aquí te dejo mis redes y correo electrónico de contacto:
+      </p>
     </div>
   </TopLayout>
+
   <BottomLayout>
-    <ul>
-      { 
-        work.map((entry) => (
-          <li class="animate border-b border-black/10 dark:border-white/25 mt-4 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none">
-            <div class="text-sm uppercase mb-4">
-              {formatWorkDate(entry.data.dateStart)} - {formatWorkDate(entry.data.dateEnd)}
+    <div class="animate space-y-12">
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {contactLinks.map((link) => (
+          <a 
+            href={link.href} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="group flex items-center gap-4 p-4 border rounded-xl border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300"
+          >
+            <div class="flex-shrink-0 size-10 flex items-center justify-center rounded-lg bg-black/5 dark:bg-white/5 group-hover:bg-blue-500/10 transition-colors">
+              <svg class="size-5 fill-current text-black dark:text-white group-hover:text-blue-500 transition-colors">
+                <use href={`/social.svg#${link.icon}`} />
+              </svg>
             </div>
-            <div class="text-black dark:text-white font-semibold">
-              {entry.data.company}
+            
+            <div class="flex flex-col truncate">
+              <span class="text-[10px] uppercase tracking-widest opacity-50">{link.label}</span>
+              <span class="font-medium text-sm text-black dark:text-white truncate group-hover:text-blue-500 transition-colors">
+                {link.text}
+              </span>
             </div>
-            <div class="text-sm font-semibold">
-              {entry.data.role}
-            </div>
-            <article class="prose dark:prose-invert">
-              <entry.Content />
-            </article>
-          </li>
-        ))
-      }
-    </ul>
+          </a>
+        ))}
+      </section>
+
+      <section class="border-t border-black/10 dark:border-white/10 pt-8">
+        <h2 class="font-semibold text-black dark:text-white text-xl mb-4">
+          Sobre mi situación actual
+        </h2>
+        <div class="space-y-4 opacity-75 leading-relaxed">
+          <p>
+            Actualmente me encuentro en la <span class="font-bold text-black dark:text-white">recta final de mi carrera</span>, compaginando mis últimos estudios con el desarrollo de mi Trabajo Fin de Grado.
+          </p>
+          <p>
+            Estoy <span class="font-bold text-black dark:text-white">abierto a explorar nuevas oportunidades laborales</span> y retos profesionales donde pueda aportar mi granito de arena, seguir creciendo como desarrollador y aplicar los conocimientos adquiridos en mis estancias internacionales y proyectos.
+          </p>
+        </div>
+      </section>
+    </div>
   </BottomLayout>
 </PageLayout>
