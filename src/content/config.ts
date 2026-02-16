@@ -15,12 +15,12 @@ const projects = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    description: z.string().optional(),
+    description: z.string(),
     date: z.coerce.date(),
-    draft: z.boolean().optional(),
+    tags: z.array(z.string()),
     demoURL: z.string().optional(),
     repoURL: z.string().optional(),
-    tags: z.array(z.string()).optional(),
+    draft: z.boolean().optional(),
   }),
 });
 
