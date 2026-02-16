@@ -1,7 +1,7 @@
 ---
 title: "Image Processing Lab"
 description: "Exploración práctica de técnicas de visión artificial para la detección de características, segmentación de color y transformaciones geométricas."
-date: "Feb 05 2024"
+date: "Jul 2025"
 tags:
   - Python
   - OpenCV
