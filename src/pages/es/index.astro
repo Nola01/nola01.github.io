@@ -67,7 +67,6 @@ const stack = [
 
   <script is:inline src="/js/bg.js"></script>
   <script>
-  // Este evento se dispara en cuanto Astro detecta que vas a cambiar de página
   document.addEventListener("astro:before-preparation", () => {
     const galaxy = document.getElementById("galaxy");
     const planet = document.getElementById("planetcont");
@@ -77,7 +76,6 @@ const stack = [
       document.getElementById("particles3")
     ];
 
-    // Usamos display: none para detener el renderizado por completo
     if (galaxy) galaxy.style.display = "none";
     if (planet) planet.style.display = "none";
     
@@ -101,7 +99,7 @@ const stack = [
       <div class='relative w-full h-full flex items-center justify-center'>
         <div class='p-5 text-center'>
           <p class='animated text-lg md:text-xl lg:text-2xl font-semibold opacity-75'>
-            Hola, soy...
+            Hola, soy
           </p>
           <h1 class="text-5xl font-bold text-black dark:text-white uppercase tracking-tighter">
             JUANMA NOLASCO </h1>
@@ -189,7 +187,7 @@ const stack = [
         </div>
       </section>
 
-            <!-- Tech Stack Section -->
+      <!-- Tech Stack Section -->
       <section class="animate">
         <div class="space-y-4">
           <p class="font-semibold text-black dark:text-white">

@@ -38,12 +38,18 @@ const subpath = pathname.match(/[^/]+/g);
 <header id="header" transition:name="main-header" class="fixed top-0 w-full h-16 z-50 ">
   <Container size="md">
     <div class="relative h-full w-full">
-      <div class="absolute left-0 top-1/2 -translate-y-1/2 flex gap-1 font-semibold">
-        <a href={lang === "es" ? "/es" : "/en"} class="flex gap-1 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
-          <svg class="size-6 fill-current">
-            <use href="/brand.svg#brand"></use>
-          </svg>
-          <div>{SITE.TITLE}</div>
+      <div class="absolute left-0 top-1/2 -translate-y-1/2 flex font-semibold">
+        <a href={lang === "es" ? "/es" : "/en"} class="flex items-center gap-1.5 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
+          
+          <img 
+            src="/code-logo.svg" 
+            alt="Logo" 
+            class="size-7 dark:invert -mt-0.5" 
+          />
+          
+          <div class="page-heading text-lg tracking-tight">
+            {SITE.TITLE}
+          </div>
         </a>
       </div>
 
@@ -82,22 +88,22 @@ const subpath = pathname.match(/[^/]+/g);
           {isEn ? "ES" : "EN"}
         </a>
 
-        <a href="/search" 
+        <!-- <a href="/search" 
           aria-label={`Buscar en ${SITE.TITLE}`} 
           class={cn("hidden md:flex size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out", pathname === "/search" ? "pointer-events-none bg-black dark:bg-white text-white dark:text-black" : "")}>
           <svg class="size-full">
             <use href="/ui.svg#search"></use>
           </svg>
-        </a>
+        </a> -->
 
-        <a href="/rss.xml" 
+        <!-- <a href="/rss.xml" 
           target="_blank" 
           aria-label={`Feed RSS de ${SITE.TITLE}`} 
           class={cn("hidden md:flex size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out")}>
           <svg class="size-full">
             <use href="/ui.svg#rss"></use>
           </svg>
-        </a>
+        </a> -->
 
         <button id="header-theme-button" 
           aria-label="Cambiar tema" 
