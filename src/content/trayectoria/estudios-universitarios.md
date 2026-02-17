@@ -1,11 +1,12 @@
 ---
 company: "Universidad de Jaén — Jaén, España"
 role: "Estudiante de Ingeniería Informática"
-dateStart: "09/2022"
-dateEnd: "06/2026"
+dateStart: "2022-09"
+dateEnd: "2026-07"
 visible: true
 draft: false
 hasDetail: true
+category: "education"
 description: "Formación integral en ingeniería del software y computación."
 ---
 

@@ -36,13 +36,13 @@ export const NAV_LINKS = {
   es: [
     { HREF: "/es", TEXT: "Inicio" },
     { HREF: "/es/proyectos", TEXT: "Proyectos" },
-    { HREF: "/es/experiencia", TEXT: "Experiencia" },
+    { HREF: "/es/trayectoria", TEXT: "Trayectoria" },
     { HREF: "/es/contacto", TEXT: "Contacto" },
   ],
   en: [
     { HREF: "/en", TEXT: "Home" },
     { HREF: "/en/projects", TEXT: "Projects" },
-    { HREF: "/en/experience", TEXT: "Experience" },
+    { HREF: "/en/career", TEXT: "Career" },
     { HREF: "/en/contact", TEXT: "Contact" },
   ],
 };

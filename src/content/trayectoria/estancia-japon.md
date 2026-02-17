@@ -1,11 +1,12 @@
 ---
 company: "Ritsumeikan University — Osaka, Japón"
 role: "Estudiante de Inteligencia Artificial"
-dateStart: "09/2024"
-dateEnd: "07/2025"
+dateStart: "2024-09-05"
+dateEnd: "2025-07-31"
 visible: true
 draft: false
 hasDetail: true
+category: "education"
 description: "Una estancia de un año como estudiante internacional en Japón en el area de la Inteligencia Artificial y Ciencia de Datos de la Ritsumeikan University"
 ---
 
