@@ -1,11 +1,12 @@
 ---
 company: "Universidad de Jaén — Jaén, España"
 role: "Estudiante de Ingeniería Informática"
-dateStart: "09/2022"
-dateEnd: "06/2026"
+dateStart: "2022-09"
+dateEnd: "2026-07"
 visible: true
 draft: false
 hasDetail: true
+category: "education"
 description: "Formación integral en ingeniería del software y computación."
 ---
 
@@ -21,7 +22,7 @@ Durante el grado, he cursado asignaturas clave que han definido mi perfil técni
 * **Sistemas Concurrentes y Distribuidos:** Explora técnicas para la ejecución de tareas simultáneas y la sincronización de procesos (semáforos, monitores), así como el diseño de sistemas distribuidos mediante paso de mensajes, modelos cliente-servidor y la implementación de algoritmos en arquitecturas remotas.
 * **Gestión y Administración de Bases de Datos:** Profundiza en la gestión avanzada de datos, cubriendo el almacenamiento físico, la optimización de consultas (tunning), la seguridad y los planes de respaldo y recuperación, así como la administración práctica de sistemas gestores de bases de datos empresariales.
 
-Esta base académica fue la que me permitió, más tarde, aprovechar al máximo mi estancia internacional en Japón y especializarme en áreas más específicas como la Inteligencia Artificial y Ciencia de Datos (puedes consultar todos los detalles de mi experiencia en Japón [**aquí**](/es/experiencia/estancia-japon)).
+Esta base académica fue la que me permitió, más tarde, aprovechar al máximo mi estancia internacional en Japón y especializarme en áreas más específicas como la Inteligencia Artificial y Ciencia de Datos (puedes consultar todos los detalles de mi experiencia en Japón [**aquí**](/es/trayectoria/estancia-japon)).
 
 Al volver, en mi último año de carrera me he especializado en la rama de Ingeniería del Software con asignaturas como:
 * **Gestión de Proyectos y Calidad del Software** Combina la planificación, estimación y gestión de riesgos en proyectos informáticos con los procesos de aseguramiento de la calidad, aplicando metodologías de pruebas, métricas de software y estándares internacionales para garantizar productos robustos y eficientes.

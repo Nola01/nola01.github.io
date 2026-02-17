@@ -5,7 +5,7 @@ import TopLayout from "@layouts/TopLayout.astro"
 import BottomLayout from "@layouts/BottomLayout.astro"
 import { WORK } from "@consts"
 
-const collection = await getCollection("work")
+const collection = await getCollection("trayectoria")
 
 collection.sort((a, b) => new Date(b.data.dateStart).getTime() - new Date(a.data.dateStart).getTime())
 
@@ -40,7 +40,7 @@ function formatWorkDate(input: Date | string) {
         work.map((entry) => (
           <li class="animate border-b border-black/10 dark:border-white/25 mt-4 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none">
             <div class="text-sm uppercase mb-4">
-              {formatWorkDate(entry.data.dateStart)} - {formatWorkDate(entry.data.dateEnd)}
+              {formatWorkDate(entry.data.dateStart)} - {formatWorkDate(entry.data.dateStart)}
             </div>
             <div class="text-black dark:text-white font-semibold">
               {entry.data.company}
