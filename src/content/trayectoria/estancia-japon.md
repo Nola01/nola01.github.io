@@ -7,7 +7,7 @@ visible: true
 draft: false
 hasDetail: true
 category: "education"
-description: "Una estancia de un año como estudiante internacional en Japón en el area de la Inteligencia Artificial y Ciencia de Datos de la Ritsumeikan University"
+description: "Una estancia de un año como estudiante internacional en Japón en el area de la Inteligencia Artificial y Ciencia de Datos de la Ritsumeikan University."
 ---
 
 Mi estancia en la [**Ritsumeikan University**](https://en.ritsumei.ac.jp) no fue solo un intercambio académico, sino una inmersión total en la cultura japonesa.
