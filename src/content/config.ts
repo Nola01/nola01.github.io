@@ -27,12 +27,13 @@ const projects = defineCollection({
 const trayectoria = defineCollection({
   type: "content",
   schema: z.object({
-    company: z.string(),
     role: z.string(),
-    dateStart: z.coerce.date(), 
+    company: z.string(),
+    dateStart: z.coerce.date(),
     dateEnd: z.coerce.date().optional(),
+    hasDetail: z.boolean().optional(), 
+    description: z.string(),
     category: z.enum(["work", "education"]),
-    description: z.string().optional(),
     draft: z.boolean().optional(),
   }),
 });
