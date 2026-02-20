@@ -7,7 +7,6 @@ import { SITE, SOCIALS } from "@consts"
 import TwinklingStars from "@components/TwinklingStars.astro"
 import MeteorShower from "@components/MeteorShower.astro"
 
-// Filtramos solo los proyectos que tengan su versión en inglés (por ID o carpeta)
 const allProjects = await getCollection("projects");
 const projects = allProjects
   .filter(project => !project.data.draft && project.id.includes('/en/'))

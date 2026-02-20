@@ -12,7 +12,7 @@ repoURL: "https://github.com/Nola01/image-processing-python-scripts"
 ---
 
 ### 🚀 Sobre el proyecto
-Desarrollado también durante mi formación en **Japón**, este toolkit se centra en la aplicación de algoritmos de **Visión Artificial** para extraer información valiosa de datos visuales. El enfoque principal fue entender la matemática detrás de cada filtro y transformación.
+Desarrollado durante mi formación en **Japón**, este toolkit se centra en la aplicación de algoritmos de **Visión Artificial** para extraer información valiosa de datos visuales. El enfoque principal fue entender la matemática detrás de cada filtro y transformación.
 
 ### 🛠️ Tecnologías y Herramientas
 * **OpenCV:** Librería core para todas las operaciones de visión y manipulación de matrices de píxeles.
