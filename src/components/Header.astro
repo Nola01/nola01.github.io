@@ -103,11 +103,36 @@ const subpath = pathname.match(/[^/]+/g);
           <svg id="drawer-open" class="size-full">
             <use href="/ui.svg#menu"></use>
           </svg>
-          <svg id="drawer-close" class="size-full">
-            <use href="/ui.svg#x"></use>
-          </svg>
+          <svg id="drawer-close" class="size-full hidden"> <use href="/ui.svg#x"></use> </svg>
         </button>
       </div>
     </div>
   </Container>
 </header>
+
+<script>
+  function initHeader() {
+    const drawerButton = document.getElementById("header-drawer-button");
+    const drawer = document.getElementById("drawer");
+    const drawerOpen = document.getElementById("drawer-open");
+    const drawerClose = document.getElementById("drawer-close");
+
+    drawerButton?.addEventListener("click", () => {
+      const isOpen = drawer?.classList.toggle("open");
+      
+      // Intercambio de iconos
+      drawerOpen?.classList.toggle("hidden", isOpen);
+      drawerClose?.classList.toggle("hidden", !isOpen);
+      
+      // Bloqueo de scroll
+      if (isOpen) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
+    });
+  }
+
+  initHeader();
+  document.addEventListener("astro:after-swap", initHeader); // Para View Transitions
+</script>
