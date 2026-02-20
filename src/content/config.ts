@@ -24,17 +24,16 @@ const projects = defineCollection({
   }),
 });
 
-const trayectoria = defineCollection({
-  type: "content",
+const career = defineCollection({
+  type: 'content',
   schema: z.object({
     role: z.string(),
     company: z.string(),
     dateStart: z.coerce.date(),
-    dateEnd: z.coerce.date().optional(),
-    hasDetail: z.boolean().optional(), 
-    description: z.string(),
+    dateEnd: z.coerce.date().optional().or(z.string()), 
     category: z.enum(["work", "education"]),
-    draft: z.boolean().optional(),
+    description: z.string(),
+    hasDetail: z.boolean().optional(),
   }),
 });
 
@@ -46,4 +45,4 @@ const legal = defineCollection({
   }),
 });
 
-export const collections = { blog, projects, trayectoria, legal };
+export const collections = { blog, projects, career, legal };

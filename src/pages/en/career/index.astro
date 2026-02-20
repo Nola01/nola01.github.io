@@ -8,7 +8,7 @@ import ArrowCard from "@components/ArrowCard";
 const rawEntries = await getCollection("career");
 
 const entries = rawEntries
-  .filter(entry => entry.id.startsWith("es/")) 
+  .filter(entry => entry.id.startsWith("en/")) 
   .map(entry => ({
     ...entry,
     data: {
@@ -18,20 +18,20 @@ const entries = rawEntries
     }
   }));
 
-const laboral = entries
+const work = entries
   .filter(e => e.data.category === "work")
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-const academica = entries
+const education = entries
   .filter(e => e.data.category === "education")
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<PageLayout title="Trayectoria" description="Mi formación académica y profesional.">
+<PageLayout title="Career" description="My professional and academic background.">
   <TopLayout>
     <div class="animate">
-      <h1 class="text-3xl font-semibold text-black dark:text-white mt-2"> Trayectoria </h1>
-      <p class="mt-4 opacity-75"> Mi evolución académica y profesional. </p>
+      <h1 class="text-3xl font-semibold text-black dark:text-white mt-2"> Career </h1>
+      <p class="mt-4 opacity-75"> My professional and academic evolution. </p>
     </div>
   </TopLayout>
 
@@ -39,10 +39,10 @@ const academica = entries
     <div class="animate space-y-12">
       <section class="space-y-4">
         <h2 class="font-semibold text-black dark:text-white text-xl border-b border-black/10 dark:border-white/10 pb-2">
-          Experiencia Laboral
+          Work Experience
         </h2>
         <div class="flex flex-col gap-4">
-          {laboral.map(entry => (
+          {work.map(entry => (
             <ArrowCard entry={entry as any} />
           ))}
         </div>
@@ -50,10 +50,10 @@ const academica = entries
 
       <section class="space-y-4">
         <h2 class="font-semibold text-black dark:text-white text-xl border-b border-black/10 dark:border-white/10 pb-2">
-          Estudios Académicos
+          Education
         </h2>
         <div class="flex flex-col gap-4">
-          {academica.map(entry => (
+          {education.map(entry => (
             <ArrowCard entry={entry as any} />
           ))}
         </div>
