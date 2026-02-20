@@ -16,10 +16,21 @@ import { ViewTransitions } from 'astro:transitions';
     <BaseHead title={`${title} | ${SITE.TITLE}`} description={description} />
   </head>
   <body transition:animate="none">
-   <Header />
+   <Header transition:name="main-header"/>
    <main transition:animate="fade">
       <slot />
    </main>
    <Footer />
 </body>
 </html>
+
+<script>
+  const links = document.querySelectorAll('a');
+  
+  links.forEach(link => {
+    if (link.hostname !== window.location.hostname) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    }
+  });
+</script>

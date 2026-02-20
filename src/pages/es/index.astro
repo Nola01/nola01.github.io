@@ -66,6 +66,24 @@ const stack = [
   </div>
 
   <script is:inline src="/js/bg.js"></script>
+  <script>
+  document.addEventListener("astro:before-preparation", () => {
+    const galaxy = document.getElementById("galaxy");
+    const planet = document.getElementById("planetcont");
+    const particles = [
+      document.getElementById("particles1"),
+      document.getElementById("particles2"),
+      document.getElementById("particles3")
+    ];
+
+    if (galaxy) galaxy.style.display = "none";
+    if (planet) planet.style.display = "none";
+    
+    particles.forEach(p => {
+      if (p) p.style.display = "none";
+    });
+  });
+</script>
   
   <!-- HERO -->
   <section class="relative h-screen w-full">
@@ -76,24 +94,28 @@ const stack = [
         </div>
       </div>
     </div>
+
     <div class="animate absolute h-full w-full flex items-center justify-center">
       <div class='relative w-full h-full flex items-center justify-center'>
         <div class='p-5 text-center'>
           <p class='animated text-lg md:text-xl lg:text-2xl font-semibold opacity-75'>
-            Hello, I am ...
+            Hola, soy
           </p>
-          <p class='animated text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-black dark:text-white'>
-            Astro Sphere
+          <h1 class="text-5xl font-bold text-black dark:text-white uppercase tracking-tighter">
+            JUANMA NOLASCO </h1>
+
+          <p class="animate text-center text-lg max-w-2xl mx-auto">
+            Estudiante de Ingeniería Informática en la <strong>Universidad de Jaén</strong>.<br/>
+            Experiencia internacional con estancia académica de un año en <strong>Japón</strong>.<br/>
+            Especializado en Ingeniería de Software con interés en <strong>IA y Visión Artificial</strong>.
           </p>
-          <p class='animated text-sm md:text-base lg:text-lg opacity-75'>
-            Currently designing products for humans.
-          </p>
-          <div id="ctaButtons" class='animated flex flex-wrap gap-4 justify-center mt-5'>
-            <a href='/blog' class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75 blend'>
-              Read my blog
+
+          <div class="flex flex-wrap justify-center gap-4 mt-8">
+            <a href="/es/proyectos" class="px-6 py-3 rounded-full bg-black dark:bg-white text-white dark:text-black font-semibold hover:opacity-90 transition">
+              Ver Proyectos
             </a>
-            <a href='/work' class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend'>
-              View my work
+            <a href="/es/trayectoria/estancia-japon" class="px-6 py-3 rounded-full border border-black/20 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/10 transition">
+              Estancia en Japón
             </a>
           </div>
         </div>
@@ -107,95 +129,45 @@ const stack = [
       <!-- About Section -->
       <section class="animate">
         <article>
-          <p>I am a <b><i>software engineer</i></b>, <b><i>ui/ux designer</i></b>, <b><i>product planner</i></b>, <b><i>mentor</i></b>, <b><i>student</i></b>, <b><i>minimalist</i></b>, <b><i>eternal optimist</i></b>, <b><i>crypto enthusiast</i></b> and <b><i>sarcasm connoisseur</i></b>.</p>
-          <p>I love to both build and break things. I am motivated by challenging projects with self-guided research and dynamic problem solving. My true passion is crafting creative front end designs with unique takes on color, typography and motion.</p>
-          <p>During my career</p>
-          <p>I have built products ranging from marketing and ecommerce websites to complex enterprise apps with focus on delivering fast, elegant code along with delightful user interfaces.</p>
-          <p>Now</p>
-          <p>I currently work as a software engineer at StreamlineFS, where I do product planning, design and development.</p>
-        </article>
-      </section>
-
-      <!-- Blog Preview Section -->
-      <section class="animate">
-        <div class="space-y-4">
-          <div class="flex justify-between">
-            <p class="font-semibold text-black dark:text-white">
-              Recent posts
-            </p>
-            <a href="/blog" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
-              <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
-                All posts
-              </span>
-            </a>
-          </div>
-          <ul class="space-y-4">
-            {posts.map((post) => (
-              <li>
-                <ArrowCard entry={post} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <!-- Tech Stack Section -->
-      <section class="animate">
-        <div class="space-y-4">
-          <p class="font-semibold text-black dark:text-white">
-            Website build with
+          <p>
+            Soy estudiante de último curso de <b>Ingeniería Informática</b> en la <b>Universidad de Jaén</b>. Mi trayectoria académica se ha visto enriquecida por una inmersión internacional de un año en <b>Japón</b>, una experiencia que potenció mi capacidad de resolución de problemas en entornos multiculturales y mi gran adaptabilidad técnica.
           </p>
-          <div class="flex flex-wrap items-center gap-2 mt-5">
-            {stack.map(item => (
-              <StackCard 
-                text={item.text}
-                icon={item.icon}
-                href={item.href}
-              />
-            ))}
-          </div>
-          <div>
-            Performing reactivity and statefulness, special guest
-            <a href="https://www.solidjs.com/" target="_blank" class="w-fit group underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
-              <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
-                SolidJS
-              </span>
-            </a>
-          </div>
-        </div>
+          <p>
+            Cuento con experiencia profesional previa en el área del <b>desarrollo web</b>, donde he trabajado con tecnologías modernas para crear soluciones eficientes. Me motiva enfrentarme a retos técnicos que requieran investigación autónoma y un pensamiento analítico para transformar conceptos complejos en productos digitales funcionales.
+          </p>
+          <p>
+            Actualmente, mi enfoque se centra en la <b>ingeniería de software</b>, con una especial motivación por explorar la integración de <b>Inteligencia Artificial</b> y <b>Visión Artificial</b> en mis proyectos. Busco constantemente nuevas formas de aplicar estas tecnologías para desarrollar software innovador, robusto y escalable.
+          </p>
+        </article>
       </section>
 
       <!-- Project Preview Section -->
       <section class="animate">
-        <div class="space-y-4">
-          <div class="flex justify-between">
-            <p class="font-semibold text-black dark:text-white">
-              Recent projects
-            </p>
-            <a href="/projects" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
-              <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
-                All projects
-              </span>
-            </a>
-          </div>
-          <ul class="space-y-4">
-            {projects.map((project) => (
-              <li>
-                <ArrowCard entry={project} />
-              </li>
-            ))}
-          </ul>
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h2 class="font-semibold text-black dark:text-white">
+            Proyectos recientes
+          </h2>
+          <a href="/es/proyectos" class="whitespace-nowrap py-1 px-3 rounded hover:bg-black/5 hover:dark:bg-white/10 border border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
+            Ver todos
+          </a>
         </div>
+        <ul class="flex flex-col gap-4 mt-4">
+          {projects.map((project) => (
+            <li>
+              <ArrowCard entry={project} />
+            </li>
+          ))}
+        </ul>
       </section>
 
       <!-- Contact Section -->
       <section class="animate">
         <div>
           <p class="font-semibold text-black dark:text-white">
-            Let's Connect
+            Conectar
           </p>
           <p>
-            Reach out to me via email or on social media.
+            Puedes contactar conmigo a través de mi perfil de LinkedIn o por correo electrónico:
           </p>
           <div class="grid grid-cols-4 gap-y-2 mt-4 auto-cols-min">
             {SOCIALS.map(social => (
@@ -214,6 +186,25 @@ const stack = [
             ))}
         </div>
       </section>
+
+      <!-- Tech Stack Section -->
+      <section class="animate">
+        <div class="space-y-4">
+          <p class="font-semibold text-black dark:text-white">
+            Web construida con
+          </p>
+          <div class="flex flex-wrap items-center gap-2 mt-5">
+            {stack.map(item => (
+              <StackCard 
+                text={item.text}
+                icon={item.icon}
+                href={item.href}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
     </div>
   </div>
 </PageLayout>

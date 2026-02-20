@@ -1,10 +1,37 @@
 ---
 import { SITE, NAV_LINKS } from "@consts"
 import { cn } from "@lib/utils"
-const { pathname } = Astro.url
-const lang = Astro.url.pathname.startsWith("/en") ? "en" : "es";
-const links = (NAV_LINKS[lang as keyof typeof NAV_LINKS] || []) as { HREF: string; TEXT: string; }[];
-const subpath = pathname.match(/[^/]+/g)
+const { pathname } = Astro.url;
+const lang = pathname.startsWith("/en") ? "en" : "es";
+const targetLang = lang === "es" ? "en" : "es";
+const currentLinks = NAV_LINKS[lang as keyof typeof NAV_LINKS];
+const targetLinks = NAV_LINKS[targetLang as keyof typeof NAV_LINKS];
+const cleanPath = pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+const currentIndex = currentLinks.findIndex(link => 
+  link.HREF === cleanPath || link.HREF === pathname
+);
+
+let toggleLangPath;
+
+if (currentIndex !== -1) {
+  toggleLangPath = targetLinks[currentIndex].HREF;
+} else {
+  if (pathname.includes("/proyectos") || pathname.includes("/projects")) {
+    toggleLangPath = lang === "es" 
+      ? pathname.replace("/es/proyectos", "/en/projects") 
+      : pathname.replace("/en/projects", "/es/proyectos");
+  } else if (pathname.includes("/experiencia") || pathname.includes("/experience")) {
+    toggleLangPath = lang === "es" 
+      ? pathname.replace("/es/experiencia", "/en/experience") 
+      : pathname.replace("/en/experience", "/es/experiencia");
+  } else {
+    toggleLangPath = lang === "es" ? "/en" : "/es";
+  }
+}
+
+const isEn = lang === "en";
+const links = currentLinks;
+const subpath = pathname.match(/[^/]+/g);
 ---
 
 <div id="drawer" class="fixed inset-0 h-0 z-40 overflow-hidden flex flex-col items-center justify-center md:hidden bg-neutral-100 dark:bg-neutral-900 transition-[height] duration-300 ease-in-out">
