@@ -2,25 +2,21 @@ import { formatDate, truncateText } from "@lib/utils"
 import type { CollectionEntry } from "astro:content"
 
 type Props = {
-  entry: CollectionEntry<"blog"> | CollectionEntry<"projects"> | CollectionEntry<"trayectoria">
+  entry: CollectionEntry<"blog"> | CollectionEntry<"projects"> | CollectionEntry<"career">
   pill?: boolean
 }
 
 export default function ArrowCard({ entry, pill }: Props) {
-  // 1. Detectamos el idioma dinámicamente según el ID del archivo (en/ o es/)
   const lang = entry.id.startsWith("en/") ? "en" : "es"; 
   
   const hasDetail = entry.data && "hasDetail" in entry.data ? entry.data.hasDetail : true;
   
-  // 2. Ajustamos la ruta de la colección según el idioma detectado
   const collectionPath = entry.collection === "projects" 
-    ? (lang === "es" ? "proyectos" : "projects") 
-    : entry.collection;
+  ? (lang === "es" ? "proyectos" : "projects") 
+  : (entry.collection === "career" ? (lang === "es" ? "trayectoria" : "career") : entry.collection);
 
-  // 3. Limpiamos el slug eliminando el prefijo del idioma (ej: "en/tfg" pasa a ser "tfg")
   const pureSlug = entry.slug.replace(/^(en|es)\//, "");
 
-  // 4. Construimos la URL final correcta: /en/projects/slug o /es/proyectos/slug
   const href = `/${lang}/${collectionPath}/${pureSlug}`;
 
   const baseClasses = "p-4 gap-3 flex items-center border rounded-lg border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out";
@@ -32,12 +28,11 @@ export default function ArrowCard({ entry, pill }: Props) {
       <div class="w-full group-hover:text-black group-hover:dark:text-white blend">
         <div class="flex flex-wrap items-center gap-2">
           <div class="text-sm uppercase">
-            {entry.collection === "trayectoria" ? (
+            {entry.collection === "career" ? (
               <>
                 {formatDate(entry.data.dateStart)} 
                 {" — "} 
-                {/* 5. Traducimos "Presente" dinámicamente */}
-                {entry.data.dateEnd ? formatDate(entry.data.dateEnd) : (lang === "es" ? "Presente" : "Present")}
+                {entry.data.dateEnd ? formatDate(new Date(entry.data.dateEnd)) : (lang === "es" ? "Presente" : "Present")}
               </>
             ) : (
               // @ts-ignore
@@ -47,10 +42,10 @@ export default function ArrowCard({ entry, pill }: Props) {
         </div>
 
         <div class="font-semibold mt-3 text-black dark:text-white line-clamp-2">
-          {entry.collection === "trayectoria" ? entry.data.role : entry.data.title}
+          {entry.collection === "career" ? entry.data.role : entry.data.title}
         </div>
 
-        {entry.collection === "trayectoria" && (
+        {entry.collection === "career" && (
           <div class="text-sm opacity-75 font-medium">
             {entry.data.company}
           </div>
@@ -84,7 +79,6 @@ export default function ArrowCard({ entry, pill }: Props) {
   return (
     <a href={href} class={`${baseClasses} ${interactiveClasses}`}>
       {CardInner}
-      {/* Añadido un pequeño icono de flecha para mejorar la UI al hacer hover */}
       <div class="text-black/50 dark:text-white/50 group-hover:text-black group-hover:dark:text-white transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform">
           <line x1="5" y1="12" x2="19" y2="12"></line>

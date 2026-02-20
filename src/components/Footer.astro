@@ -2,7 +2,6 @@
 import { SITE, SOCIALS } from "@consts"
 import Container from "@components/Container.astro"
 
-// Detectamos si estamos en la versión inglesa
 const isEnglish = Astro.url.pathname.startsWith("/en");
 ---
 
@@ -17,7 +16,6 @@ const isEnglish = Astro.url.pathname.startsWith("/en");
               <polyline points="12 19 5 12 12 5" class="translate-x-1 group-hover:translate-x-0 transition-all duration-300 ease-in-out" />
             </svg>
             <div class="w-full group-hover:text-black group-hover:dark:text-white transition-colors duration-300 ease-in-out">
-              {/* Texto dinámico según el idioma */}
               {isEnglish ? "Back to top" : "Volver arriba"}
             </div>
           </button>

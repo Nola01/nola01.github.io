@@ -11,10 +11,9 @@ export async function getStaticPaths() {
   const projects = await getCollection("projects")
   
   return projects
-    .filter(project => project.id.startsWith("es/")) // Filtramos solo archivos en español
+    .filter(project => project.id.startsWith("es/")) 
     .map((project) => ({
       params: { 
-        // Quitamos "es/" para que coincida con el enlace /es/proyectos/tfg
         slug: project.slug.replace(/^es\//, "") 
       },
       props: project,

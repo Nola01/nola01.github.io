@@ -9,9 +9,9 @@ import ArticleBottomLayout from "@layouts/ArticleBottomLayout.astro";
 export async function getStaticPaths() {
   const entries = await getCollection("career");
   return entries
-    .filter(entry => entry.id.startsWith("es/"))
+    .filter(entry => entry.id.startsWith("en/"))
     .map((entry) => ({
-      params: { slug: entry.slug.replace(/^es\//, "") },
+      params: { slug: entry.slug.replace(/^en\//, "") },
       props: entry,
     }));
 }
