@@ -1,17 +1,19 @@
 ---
-import { getCollection } from "astro:content"
-import PageLayout from "@layouts/PageLayout.astro"
-import ArrowCard from "@components/ArrowCard"
-import StackCard from "@components/StackCard.astro"
-import { SITE, SOCIALS } from "@consts"
-import TwinklingStars from "@components/TwinklingStars.astro"
-import MeteorShower from "@components/MeteorShower.astro"
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import StackCard from "@components/StackCard.astro";
+import { SITE, SOCIALS } from "@consts";
+import TwinklingStars from "@components/TwinklingStars.astro";
+import PageLayout from "@layouts/PageLayout.astro";
+import MeteorShower from "@components/MeteorShower.astro";
+import ArrowCard from "@components/ArrowCard";
 
-const allProjects = await getCollection("projects");
+const allProjects = (await getCollection("projects")) as CollectionEntry<"projects">[];
+
 const projects = allProjects
-  .filter(project => !project.data.draft && project.id.includes('/en/'))
+  .filter(project => !project.data.draft && project.id.startsWith("en/"))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0,3)
+  .slice(0, 3);
 
 const stack = [
   { 
@@ -34,7 +36,7 @@ const stack = [
     icon: "tailwind", 
     href: "https://tailwindcss.com" 
   },
-]
+];
 ---
 
 <PageLayout title="Home" description={SITE.DESCRIPTION}>

@@ -11,6 +11,6 @@ export default defineConfig({
     prefetchAll: true,
     defaultStrategy: 'hover' // Precarga cuando el ratón pasa por encima
   },
-  site: "https://astro-sphere-demo.vercel.app",
+  site: "https://nola01.github.io",
   integrations: [mdx(), sitemap(), solidJs(), tailwind({ applyBaseStyles: false })],
 })
