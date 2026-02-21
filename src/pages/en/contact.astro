@@ -1,0 +1,81 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import TopLayout from "@layouts/TopLayout.astro";
+import BottomLayout from "@layouts/BottomLayout.astro";
+
+const contactLinks = [
+  {
+    label: "Email",
+    href: "mailto:jnolrom@gmail.com",
+    text: "jnolrom@gmail.com",
+    icon: "email"
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/juanma-nolasco",
+    text: "LinkedIn Profile",
+    icon: "linkedin"
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/Nola01",
+    text: "Nola01",
+    icon: "github"
+  }
+];
+---
+
+<PageLayout title="Contact" description="Contact methods and social networks.">
+  <TopLayout>
+    <div class="animate">
+      <h1 class="text-3xl font-semibold text-black dark:text-white mt-2">
+        Contact
+      </h1>
+      <p class="mt-4 opacity-75">
+        Feel free to reach out to me through my social networks or email:
+      </p>
+    </div>
+  </TopLayout>
+
+  <BottomLayout>
+    <div class="animate space-y-12">
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {contactLinks.map((link) => (
+          <a 
+            href={link.href} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="group flex items-center gap-4 p-4 border rounded-xl border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300"
+          >
+            <div class="flex-shrink-0 size-10 flex items-center justify-center rounded-lg bg-black/5 dark:bg-white/5 group-hover:bg-blue-500/10 transition-colors">
+              <svg class="size-5 fill-current text-black dark:text-white group-hover:text-blue-500 transition-colors">
+                <use href={`/social.svg#${link.icon}`} />
+              </svg>
+            </div>
+            
+            <div class="flex flex-col truncate">
+              <span class="text-[10px] uppercase tracking-widest opacity-50">{link.label}</span>
+              <span class="font-medium text-sm text-black dark:text-white truncate group-hover:text-blue-500 transition-colors">
+                {link.text}
+              </span>
+            </div>
+          </a>
+        ))}
+      </section>
+
+      <section class="border-t border-black/10 dark:border-white/10 pt-8">
+        <h2 class="font-semibold text-black dark:text-white text-xl mb-4">
+          Current Situation
+        </h2>
+        <div class="space-y-4 opacity-75 leading-relaxed">
+          <p>
+            I am currently in the <span class="font-bold text-black dark:text-white">final stretch of my degree</span>, balancing my final studies with the development of my Bachelor's Thesis.
+          </p>
+          <p>
+            I am <span class="font-bold text-black dark:text-white">open to exploring new job opportunities</span> and professional challenges where I can contribute, continue growing as a developer, and apply the knowledge acquired during my international stays and projects.
+          </p>
+        </div>
+      </section>
+    </div>
+  </BottomLayout>
+</PageLayout>

@@ -1,0 +1,210 @@
+---
+import { getCollection } from "astro:content"
+import PageLayout from "@layouts/PageLayout.astro"
+import ArrowCard from "@components/ArrowCard"
+import StackCard from "@components/StackCard.astro"
+import { SITE, SOCIALS } from "@consts"
+import TwinklingStars from "@components/TwinklingStars.astro"
+import MeteorShower from "@components/MeteorShower.astro"
+
+const posts = (await getCollection("blog"))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0,3)
+
+const projects = (await getCollection("projects"))
+  .filter(project => !project.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0,3)
+
+const stack = [
+  { 
+    text: "Astro", 
+    icon: "astro", 
+    href: "https://astro.build" 
+  },
+  { 
+    text: "Javascript", 
+    icon: "javascript", 
+    href: "https://www.javascript.com" 
+  },
+  { 
+    text: "Typescript", 
+    icon: "typescript", 
+    href: "https://www.typescriptlang.org" 
+  },
+  { 
+    text: "Tailwind", 
+    icon: "tailwind", 
+    href: "https://tailwindcss.com" 
+  },
+]
+---
+
+<PageLayout title="Home" description={SITE.DESCRIPTION}>
+
+  <!-- Light Mode: Particles -->
+  <div class='absolute inset-0 block dark:hidden'>
+    <div id='particles1' class='fixed inset-0'></div>
+    <div id='particles2' class='fixed inset-0'></div>
+    <div id='particles3' class='fixed inset-0'></div>
+  </div>
+
+  <!-- Dark Theme: Stars -->
+  <div class='absolute inset-0 bg-black hidden dark:block'>
+    <div id='stars1' class='fixed inset-0'></div>
+    <div id='stars2' class='fixed inset-0'></div>
+    <div id='stars3' class='fixed inset-0'></div>
+  </div>
+
+  <!-- Dark Theme: Twinkling Stars / Metors -->
+  <div id="galaxy" class="fixed inset-0">
+    <div class="hidden dark:block">
+      <TwinklingStars/>
+      <MeteorShower/>
+    </div>
+  </div>
+
+  <script is:inline src="/js/bg.js"></script>
+  <script>
+  document.addEventListener("astro:before-preparation", () => {
+    const galaxy = document.getElementById("galaxy");
+    const planet = document.getElementById("planetcont");
+    const particles = [
+      document.getElementById("particles1"),
+      document.getElementById("particles2"),
+      document.getElementById("particles3")
+    ];
+
+    if (galaxy) galaxy.style.display = "none";
+    if (planet) planet.style.display = "none";
+    
+    particles.forEach(p => {
+      if (p) p.style.display = "none";
+    });
+  });
+</script>
+  
+  <!-- HERO -->
+  <section class="relative h-screen w-full">
+    <div id="planetcont" class='animate absolute inset-0 top-1/4 overflow-hidden'>
+      <div id="crescent" class='absolute top-0 left-1/2 -translate-x-1/2 w-[250vw] min-h-[100vh] aspect-square rounded-full p-[1px] bg-gradient-to-b from-black/25 dark:from-white/75 from-0% to-transparent to-5%'>
+        <div id="planet" class='w-full h-full bg-white dark:bg-black rounded-full p-[1px] overflow-hidden flex justify-center'>
+          <div id="blur" class='w-full h-20 rounded-full bg-neutral-900/25 dark:bg-white/25 blur-3xl'/>
+        </div>
+      </div>
+    </div>
+
+    <div class="animate absolute h-full w-full flex items-center justify-center">
+      <div class='relative w-full h-full flex items-center justify-center'>
+        <div class='p-5 text-center'>
+          <p class='animated text-lg md:text-xl lg:text-2xl font-semibold opacity-75'>
+            Hola, soy
+          </p>
+          <h1 class="text-5xl font-bold text-black dark:text-white uppercase tracking-tighter">
+            JUANMA NOLASCO </h1>
+
+          <p class="animate text-center text-lg max-w-2xl mx-auto">
+            Estudiante de Ingeniería Informática en la <strong>Universidad de Jaén</strong>.<br/>
+            Experiencia internacional con estancia académica de un año en <strong>Japón</strong>.<br/>
+            Especializado en Ingeniería de Software con interés en <strong>IA y Visión Artificial</strong>.
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-4 mt-8">
+            <a href="/es/proyectos" class="px-6 py-3 rounded-full bg-black dark:bg-white text-white dark:text-black font-semibold hover:opacity-90 transition">
+              Ver Proyectos
+            </a>
+            <a href="/es/trayectoria/estancia-japon" class="px-6 py-3 rounded-full border border-black/20 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/10 transition">
+              Estancia en Japón
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="relative bg-white dark:bg-black">
+    <div class="mx-auto max-w-screen-sm p-5 space-y-24 pb-16">
+
+      <!-- About Section -->
+      <section class="animate">
+        <article>
+          <p>
+            Soy estudiante de último curso de <b>Ingeniería Informática</b> en la <b>Universidad de Jaén</b>. Mi trayectoria académica se ha visto enriquecida por una inmersión internacional de un año en <b>Japón</b>, una experiencia que potenció mi capacidad de resolución de problemas en entornos multiculturales y mi gran adaptabilidad técnica.
+          </p>
+          <p>
+            Cuento con experiencia profesional previa en el área del <b>desarrollo web</b>, donde he trabajado con tecnologías modernas para crear soluciones eficientes. Me motiva enfrentarme a retos técnicos que requieran investigación autónoma y un pensamiento analítico para transformar conceptos complejos en productos digitales funcionales.
+          </p>
+          <p>
+            Actualmente, mi enfoque se centra en la <b>ingeniería de software</b>, con una especial motivación por explorar la integración de <b>Inteligencia Artificial</b> y <b>Visión Artificial</b> en mis proyectos. Busco constantemente nuevas formas de aplicar estas tecnologías para desarrollar software innovador, robusto y escalable.
+          </p>
+        </article>
+      </section>
+
+      <!-- Project Preview Section -->
+      <section class="animate">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h2 class="font-semibold text-black dark:text-white">
+            Proyectos recientes
+          </h2>
+          <a href="/es/proyectos" class="whitespace-nowrap py-1 px-3 rounded hover:bg-black/5 hover:dark:bg-white/10 border border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
+            Ver todos
+          </a>
+        </div>
+        <ul class="flex flex-col gap-4 mt-4">
+          {projects.map((project) => (
+            <li>
+              <ArrowCard entry={project} />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="animate">
+        <div>
+          <p class="font-semibold text-black dark:text-white">
+            Conectar
+          </p>
+          <p>
+            Puedes contactar conmigo a través de mi perfil de LinkedIn o por correo electrónico:
+          </p>
+          <div class="grid grid-cols-4 gap-y-2 mt-4 auto-cols-min">
+            {SOCIALS.map(social => (
+              <div class="col-span-1 flex items-center gap-1">
+                <span class="whitespace-nowrap truncate">
+                  {social.NAME}
+                </span>
+              </div>
+              <div class="col-span-3 truncate">
+                <a href={social.HREF} target="_blank" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
+                  <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
+                    {social.TEXT}
+                  </span>
+                </a>
+              </div>
+            ))}
+        </div>
+      </section>
+
+      <!-- Tech Stack Section -->
+      <section class="animate">
+        <div class="space-y-4">
+          <p class="font-semibold text-black dark:text-white">
+            Web construida con
+          </p>
+          <div class="flex flex-wrap items-center gap-2 mt-5">
+            {stack.map(item => (
+              <StackCard 
+                text={item.text}
+                icon={item.icon}
+                href={item.href}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</PageLayout>

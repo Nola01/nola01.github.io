@@ -1,0 +1,63 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import TopLayout from "@layouts/TopLayout.astro";
+import BottomLayout from "@layouts/BottomLayout.astro";
+import ArrowCard from "@components/ArrowCard"; 
+
+const rawEntries = await getCollection("career");
+
+const entries = rawEntries
+  .filter(entry => entry.id.startsWith("es/")) 
+  .map(entry => ({
+    ...entry,
+    data: {
+      ...entry.data,
+      title: entry.data.role, 
+      date: entry.data.dateStart, 
+    }
+  }));
+
+const laboral = entries
+  .filter(e => e.data.category === "work")
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const academica = entries
+  .filter(e => e.data.category === "education")
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<PageLayout title="Trayectoria" description="Mi formación académica y profesional.">
+  <TopLayout>
+    <div class="animate">
+      <h1 class="text-3xl font-semibold text-black dark:text-white mt-2"> Trayectoria </h1>
+      <p class="mt-4 opacity-75"> Mi evolución académica y profesional. </p>
+    </div>
+  </TopLayout>
+
+  <BottomLayout>
+    <div class="animate space-y-12">
+      <section class="space-y-4">
+        <h2 class="font-semibold text-black dark:text-white text-xl border-b border-black/10 dark:border-white/10 pb-2">
+          Experiencia Laboral
+        </h2>
+        <div class="flex flex-col gap-4">
+          {laboral.map(entry => (
+            <ArrowCard entry={entry as any} />
+          ))}
+        </div>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="font-semibold text-black dark:text-white text-xl border-b border-black/10 dark:border-white/10 pb-2">
+          Estudios Académicos
+        </h2>
+        <div class="flex flex-col gap-4">
+          {academica.map(entry => (
+            <ArrowCard entry={entry as any} />
+          ))}
+        </div>
+      </section>
+    </div>
+  </BottomLayout>
+</PageLayout>

@@ -9,9 +9,26 @@ type Props = {
   entry_name: string
   tags: string[]
   data: CollectionEntry<"blog">[] | CollectionEntry<'projects'>[]
+  labels?: {
+    search: string;
+    showing: string;
+    of: string;
+    projects: string;
+    oldest: string;
+    newest: string;
+  }
 }
 
-export default function SearchCollection({ entry_name, data, tags }: Props) {
+export default function SearchCollection({ entry_name, data, tags, labels }: Props) {
+  const l = labels || {
+    search: "Buscar proyectos",
+    showing: "MOSTRANDO",
+    of: "DE",
+    projects: "PROYECTOS",
+    oldest: "ANTIGÜEDAD",
+    newest: "NOVEDAD"
+  };
+
   const coerced = data.map((entry) => entry as CollectionEntry<'blog'>);
 
   const [query, setQuery] = createSignal("");
@@ -32,9 +49,9 @@ export default function SearchCollection({ entry_name, data, tags }: Props) {
       : fuse.search(query()).map((result) => result.item)
     ).filter((entry) =>
       Array.from(filter()).every((value) =>
-        entry.data.tags.some((tag: string) =>
+        entry.data.tags?.some((tag: string) => 
           tag.toLowerCase() === String(value).toLowerCase()
-        )
+        ) ?? false
       )
     );
     setCollection(descending() ? filtered.toReversed() : filtered)
@@ -71,81 +88,50 @@ export default function SearchCollection({ entry_name, data, tags }: Props) {
 
   return (
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-      {/* Control Panel*/}
       <div class="col-span-3 sm:col-span-1">
         <div class="sticky top-24 mt-7">
-          {/* Search Bar */}
-          <SearchBar onSearchInput={onSearchInput} query={query} setQuery={setQuery} placeholderText={`Search ${entry_name}`} />
-          {/* Tag Filters */}
-          <div class="relative flex flex-row justify-between w-full"><p class="text-sm font-semibold uppercase my-4 text-black dark:text-white">Tags</p>
+          <SearchBar onSearchInput={onSearchInput} query={query} setQuery={setQuery} placeholderText={l.search} />
+          
+          <div class="relative flex flex-row justify-between w-full">
+            <p class="text-sm font-semibold uppercase my-4 text-black dark:text-white">
+              {l.projects === "PROJECTS" ? "Tags" : "Etiquetas"}
+            </p>
             {filter().size > 0 && (
-              <button
-                onClick={clearFilters}
-                class="absolute flex justify-center items-center h-full w-10 right-0 top-0 stroke-neutral-400 dark:stroke-neutral-500 hover:stroke-neutral-600 hover:dark:stroke-neutral-300"
-              >
-                <svg class="size-5">
-                  <use href={`/ui.svg#x`} />
-                </svg>
+              <button onClick={clearFilters} class="absolute flex justify-center items-center h-full w-10 right-0 top-0 stroke-neutral-400 dark:stroke-neutral-500 hover:stroke-neutral-600 hover:dark:stroke-neutral-300">
+                <svg class="size-5"><use href={`/ui.svg#x`} /></svg>
               </button>
-            )}</div>
+            )}
+          </div>
+
           <ul class="flex flex-wrap sm:flex-col gap-1.5">
             <For each={tags}>
               {(tag) => (
                 <li class="sm:w-full">
-                  <button
-                    onClick={() => toggleTag(tag)}
-                    class={cn(
-                      "w-full px-2 py-1 rounded",
-                      "flex gap-2 items-center",
-                      "bg-black/5 dark:bg-white/10",
-                      "hover:bg-black/10 hover:dark:bg-white/15",
-                      "transition-colors duration-300 ease-in-out",
-                      filter().has(tag) && "text-black dark:text-white"
-                    )}
-                  >
-                    <svg
-                      class={cn(
-                        "shrink-0 size-5 fill-black/50 dark:fill-white/50",
-                        "transition-colors duration-300 ease-in-out",
-                        filter().has(tag) && "fill-black dark:fill-white"
-                      )}
-                    >
-                      <use
-                        href={`/ui.svg#square`}
-                        class={cn(!filter().has(tag) ? "block" : "hidden")}
-                      />
-                      <use
-                        href={`/ui.svg#square-check`}
-                        class={cn(filter().has(tag) ? "block" : "hidden")}
-                      />
+                  <button onClick={() => toggleTag(tag)} class={cn("w-full px-2 py-1 rounded flex gap-2 items-center bg-black/5 dark:bg-white/10 hover:bg-black/10 hover:dark:bg-white/15 transition-colors duration-300 ease-in-out", filter().has(tag) && "text-black dark:text-white")}>
+                    <svg class={cn("shrink-0 size-5 fill-black/50 dark:fill-white/50 transition-colors duration-300 ease-in-out", filter().has(tag) && "fill-black dark:fill-white")}>
+                      <use href={`/ui.svg#square`} class={cn(!filter().has(tag) ? "block" : "hidden")} />
+                      <use href={`/ui.svg#square-check`} class={cn(filter().has(tag) ? "block" : "hidden")} />
                     </svg>
-
-                    <span class="truncate block min-w-0 pt-[2px]">
-                      {tag}
-                    </span>
+                    <span class="truncate block min-w-0 pt-[2px]">{tag}</span>
                   </button>
-
                 </li>
               )}
             </For>
           </ul>
         </div>
       </div>
-      {/* Posts */}
+
       <div class="col-span-3 sm:col-span-2">
         <div class="flex flex-col">
-          {/* Info Bar */}
           <div class='flex justify-between flex-row mb-2'>
             <div class="text-sm uppercase">
-              SHOWING {collection().length} OF {data.length} {entry_name}
+              {l.showing} {collection().length} {l.of} {data.length} {l.projects}
             </div>
             <button onClick={toggleDescending} class='flex flex-row gap-1 stroke-neutral-400 dark:stroke-neutral-500 hover:stroke-neutral-600 hover:dark:stroke-neutral-300 text-neutral-400 dark:text-neutral-500 hover:text-neutral-600 hover:dark:text-neutral-300'>
               <div class="text-sm uppercase">
-                {descending() ? "DESCENDING" : "ASCENDING"}
+                {descending() ? l.oldest : l.newest}
               </div>
-              <svg
-                class="size-5 left-2 top-[0.45rem]"
-              >
+              <svg class="size-5 left-2 top-[0.45rem]">
                 <use href={`/ui.svg#sort-descending`} class={descending() ? "block" : "hidden"}></use>
                 <use href={`/ui.svg#sort-ascending`} class={descending() ? "hidden" : "block"}></use>
               </svg>

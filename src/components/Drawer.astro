@@ -1,47 +1,77 @@
 ---
-import { SITE, LINKS } from "@consts"
+import { NAV_LINKS } from "@consts"
 import { cn } from "@lib/utils"
-const { pathname } = Astro.url
-const subpath = pathname.match(/[^/]+/g)
+
+const { pathname } = Astro.url;
+const lang = pathname.startsWith("/en") ? "en" : "es";
+const isEn = lang === "en";
+
+// Lógica de cambio de idioma
+const currentLinks = NAV_LINKS[lang as keyof typeof NAV_LINKS] || [];
+const targetLang = isEn ? "es" : "en";
+const targetLinks = NAV_LINKS[targetLang as keyof typeof NAV_LINKS] || [];
+
+const cleanPath = pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+const currentIndex = currentLinks.findIndex(link => link.HREF === cleanPath || link.HREF === pathname);
+
+let toggleLangPath;
+if (currentIndex !== -1) {
+  toggleLangPath = targetLinks[currentIndex].HREF;
+} else {
+  if (pathname.includes("/proyectos") || pathname.includes("/projects")) {
+    toggleLangPath = lang === "es" ? pathname.replace("/es/proyectos", "/en/projects") : pathname.replace("/en/projects", "/es/proyectos");
+  } else if (pathname.includes("/trayectoria") || pathname.includes("/career")) {
+    toggleLangPath = lang === "es" ? pathname.replace("/es/trayectoria", "/en/career") : pathname.replace("/en/career", "/es/trayectoria");
+  } else {
+    toggleLangPath = isEn ? "/es" : "/en";
+  }
+}
 ---
 
-<div id="drawer" class="fixed inset-0 h-0 z-40 overflow-hidden flex flex-col items-center justify-center md:hidden bg-neutral-100 dark:bg-neutral-900 transition-[height] duration-300 ease-in-out">
-  <nav class="flex flex-col items-center space-y-2">
-    {
-      LINKS.map((LINK) => (
-        <a href={LINK.HREF} class={cn("flex items-center justify-center px-3 py-1 rounded-full", "text-current hover:text-black dark:hover:text-white", "hover:bg-black/5 dark:hover:bg-white/20", "transition-colors duration-300 ease-in-out", pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF ? "pointer-events-none bg-black dark:bg-white text-white dark:text-black" : "")}>
-          {LINK.TEXT}
+<div id="drawer" class="fixed inset-0 z-40 flex items-center justify-center bg-black/50 dark:bg-white/10 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 ease-in-out md:hidden">
+  <div class="drawer-container bg-white dark:bg-black p-8 rounded-2xl border border-black/10 dark:border-white/20 shadow-xl w-[85%] max-w-[320px] flex flex-col items-center gap-8 scale-90 transition-transform duration-300">
+    
+    <nav class="flex flex-col items-center gap-4 w-full">
+      {currentLinks.map((link) => (
+        <a 
+          href={link.HREF} 
+          class={cn(
+            "w-full text-center py-2 rounded-lg transition-colors duration-300 text-lg font-medium",
+            pathname === link.HREF || pathname === link.HREF + "/"
+              ? "bg-black text-white dark:bg-white dark:text-black" 
+              : "text-black/60 dark:text-white/60 hover:bg-black/5 dark:hover:bg-white/10"
+          )}
+        >
+          {link.TEXT}
         </a>
-      ))
-    }
-  </nav>
+      ))}
+    </nav>
 
-  <div class="flex gap-1 mt-5">
-    <a href="/search" aria-label={`Search blog posts and projects on ${SITE.TITLE}`} class={cn("size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out", pathname === "/search" || "/" + subpath?.[0] === "search" ? "pointer-events-none bg-black dark:bg-white text-white dark:text-black" : "")}>
-      <svg class="size-full">
-        <use href="/ui.svg#search"></use>
-      </svg>
-    </a>
+    <div class="flex items-center justify-center gap-4 pt-4 border-t border-black/10 dark:border-white/10 w-full">
+      <a href={toggleLangPath} 
+        class="flex size-11 rounded-full items-center justify-center bg-transparent border border-black/10 dark:border-white/25 text-xs font-bold hover:bg-black/5 dark:hover:bg-white/20 transition-colors">
+        {isEn ? "ES" : "EN"}
+      </a>
 
-    <a href="/rss.xml" target="_blank" aria-label={`Rss feed for ${SITE.TITLE}`} class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out">
-      <svg class="size-full">
-        <use href="/ui.svg#rss"></use>
-      </svg>
-    </a>
-
-    <button id="drawer-theme-button" aria-label={`Toggle light and dark theme`} class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out">
-      <svg class="block dark:hidden size-full">
-        <use href="/ui.svg#sun"></use>
-      </svg>
-      <svg class="hidden dark:block size-full">
-        <use href="/ui.svg#moon"></use>
-      </svg>
-    </button>
+      <button id="drawer-theme-button" 
+        class="flex size-11 rounded-full items-center justify-center bg-transparent border border-black/10 dark:border-white/25 hover:bg-black/5 dark:hover:bg-white/20 transition-colors stroke-current">
+        <svg class="size-5 block dark:hidden">
+          <use href="/ui.svg#sun"></use>
+        </svg>
+        <svg class="size-5 hidden dark:block">
+          <use href="/ui.svg#moon"></use>
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
 
 <style>
   #drawer.open {
-    @apply h-full;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #drawer.open .drawer-container {
+    transform: scale(1);
   }
 </style>

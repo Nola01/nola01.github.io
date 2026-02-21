@@ -1,0 +1,185 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import StackCard from "@components/StackCard.astro";
+import { SITE, SOCIALS } from "@consts";
+import TwinklingStars from "@components/TwinklingStars.astro";
+import PageLayout from "@layouts/PageLayout.astro";
+import MeteorShower from "@components/MeteorShower.astro";
+import ArrowCard from "@components/ArrowCard";
+
+const allProjects = (await getCollection("projects")) as CollectionEntry<"projects">[];
+
+const projects = allProjects
+  .filter(project => !project.data.draft && project.id.startsWith("en/"))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+
+const stack = [
+  { 
+    text: "Astro", 
+    icon: "astro", 
+    href: "https://astro.build" 
+  },
+  { 
+    text: "Javascript", 
+    icon: "javascript", 
+    href: "https://www.javascript.com" 
+  },
+  { 
+    text: "Typescript", 
+    icon: "typescript", 
+    href: "https://www.typescriptlang.org" 
+  },
+  { 
+    text: "Tailwind", 
+    icon: "tailwind", 
+    href: "https://tailwindcss.com" 
+  },
+];
+---
+
+<PageLayout title="Home" description={SITE.DESCRIPTION}>
+
+  <div class='absolute inset-0 block dark:hidden'>
+    <div id='particles1' class='fixed inset-0'></div>
+    <div id='particles2' class='fixed inset-0'></div>
+    <div id='particles3' class='fixed inset-0'></div>
+  </div>
+
+  <div class='absolute inset-0 bg-black hidden dark:block'>
+    <div id='stars1' class='fixed inset-0'></div>
+    <div id='stars2' class='fixed inset-0'></div>
+    <div id='stars3' class='fixed inset-0'></div>
+  </div>
+
+  <div id="galaxy" class="fixed inset-0">
+    <div class="hidden dark:block">
+      <TwinklingStars/>
+      <MeteorShower/>
+    </div>
+  </div>
+
+  <script is:inline src="/js/bg.js"></script>
+  
+  <section class="relative h-screen w-full">
+    <div id="planetcont" class='animate absolute inset-0 top-1/4 overflow-hidden'>
+      <div id="crescent" class='absolute top-0 left-1/2 -translate-x-1/2 w-[250vw] min-h-[100vh] aspect-square rounded-full p-[1px] bg-gradient-to-b from-black/25 dark:from-white/75 from-0% to-transparent to-5%'>
+        <div id="planet" class='w-full h-full bg-white dark:bg-black rounded-full p-[1px] overflow-hidden flex justify-center'>
+          <div id="blur" class='w-full h-20 rounded-full bg-neutral-900/25 dark:bg-white/25 blur-3xl'/>
+        </div>
+      </div>
+    </div>
+
+    <div class="animate absolute h-full w-full flex items-center justify-center">
+      <div class='relative w-full h-full flex items-center justify-center'>
+        <div class='p-5 text-center'>
+          <p class='animated text-lg md:text-xl lg:text-2xl font-semibold opacity-75'>
+            Hi, I'm
+          </p>
+          <h1 class="text-5xl font-bold text-black dark:text-white uppercase tracking-tighter">
+            JUANMA NOLASCO </h1>
+
+          <p class="animate text-center text-lg max-w-2xl mx-auto">
+            Computer Engineering student at the <strong>University of Jaén</strong>.<br/>
+            International experience with a one-year academic exchange in <strong>Japan</strong>.<br/>
+            Specialized in Software Engineering with an interest in <strong>AI and Computer Vision</strong>.
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-4 mt-8">
+            <a href="/en/projects" class="px-6 py-3 rounded-full bg-black dark:bg-white text-white dark:text-black font-semibold hover:opacity-90 transition">
+              View Projects
+            </a>
+            <a href="/en/career/estancia-japon" class="px-6 py-3 rounded-full border border-black/20 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/10 transition">
+              Japan Exchange
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="relative bg-white dark:bg-black">
+    <div class="mx-auto max-w-screen-sm p-5 space-y-24 pb-16">
+
+      <section class="animate">
+        <article>
+          <p>
+            I am a final-year <b>Computer Engineering</b> student at the <b>University of Jaén</b>. My academic journey has been enriched by a one-year international immersion in <b>Japan</b>, an experience that enhanced my problem-solving skills in multicultural environments and my technical adaptability.
+          </p>
+          <p>
+            I have prior professional experience in <b>web development</b>, working with modern technologies to create efficient solutions. I am motivated by technical challenges that require autonomous research and analytical thinking to transform complex concepts into functional digital products.
+          </p>
+          <p>
+            Currently, my focus is on <b>software engineering</b>, with a special interest in exploring the integration of <b>Artificial Intelligence</b> and <b>Computer Vision</b> in my projects. I am constantly seeking new ways to apply these technologies to develop innovative, robust, and scalable software.
+          </p>
+        </article>
+      </section>
+
+      <section class="animate">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h2 class="font-semibold text-black dark:text-white">
+            Recent projects
+          </h2>
+          <a href="/en/projects" class="whitespace-nowrap py-1 px-3 rounded hover:bg-black/5 hover:dark:bg-white/10 border border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
+            View all
+          </a>
+        </div>
+        <ul class="flex flex-col gap-4 mt-4">
+          {projects.map((project) => (
+            <li>
+              <ArrowCard entry={project} />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="animate">
+        <div>
+          <p class="font-semibold text-black dark:text-white">
+            Connect
+          </p>
+          <p>
+            You can contact me through my LinkedIn profile or via email:
+          </p>
+          <div class="grid grid-cols-4 gap-y-2 mt-4 auto-cols-min">
+            {SOCIALS.map(social => (
+              <>
+                <div class="col-span-1 flex items-center gap-1">
+                  <span class="whitespace-nowrap truncate">
+                    {social.NAME}
+                  </span>
+                </div>
+                <div class="col-span-3 truncate">
+                  <a href={social.HREF} target="_blank" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
+                    <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
+                      {social.TEXT}
+                    </span>
+                  </a>
+                </div>
+              </>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="animate">
+        <div class="space-y-4">
+          <p class="font-semibold text-black dark:text-white">
+            Site built with
+          </p>
+          <div class="flex flex-wrap items-center gap-2 mt-5">
+            {stack.map(item => (
+              <StackCard 
+                text={item.text}
+                icon={item.icon}
+                href={item.href}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</PageLayout>

@@ -1,0 +1,38 @@
+---
+company: "University of Jaén — Jaén, Spain"
+role: "Computer Engineering Student"
+dateStart: "2022-09"
+dateEnd: "2026-07"
+visible: true
+draft: false
+hasDetail: true
+category: "education"
+description: "Comprehensive training in software engineering and computing."
+---
+
+My time at the [**University of Jaén**](https://www.ujaen.es) has been the fundamental stage where I consolidated my passion for technology and built a solid foundation as an engineer. Throughout these years, I have not only acquired theoretical knowledge but have also learned to tackle complex problems in a structured and efficient way.
+
+![Jaén Campus](/images/campus-uja.jpg)
+*View of the Jaén campus*
+
+### 💡 Education and Specialization
+During the degree, I have taken key subjects that have defined my technical profile, such as:
+* **Discrete Mathematics and Algebra:** Covers the mathematical foundations of computing, from discrete structures like logic, sets, and graph theory, to linear algebra concepts, focusing on systems of equations, vector spaces, and their applications in algorithms and data structures.
+* **Network Programming and Administration:** Focuses on the study of TCP/IP architecture and network application programming through sockets, as well as the configuration, deployment, and management of fundamental services (DNS, email, web servers) in server administration environments.
+* **Concurrent and Distributed Systems:** Explores techniques for simultaneous task execution and process synchronization (semaphores, monitors), as well as the design of distributed systems through message passing, client-server models, and algorithm implementation in remote architectures.
+* **Database Management and Administration:** Delves into advanced data management, covering physical storage, query optimization (tuning), security, and backup and recovery plans, as well as the practical administration of enterprise database management systems.
+
+This academic foundation allowed me, later on, to make the most of my international stay in Japan and specialize in more specific areas such as Artificial Intelligence and Data Science (you can check all the details of my experience in Japan [**here**](/en/career/japan-exchange)).
+
+Upon returning, in my final year, I specialized in the Software Engineering branch with subjects such as:
+* **Project Management and Software Quality:** Combines planning, estimation, and risk management in IT projects with quality assurance processes, applying testing methodologies, software metrics, and international standards to guarantee robust and efficient products.
+* **Requirements Engineering:** Detailed study of the elicitation, analysis, modeling, specification, and validation phases of requirements in software development, using modeling techniques and languages to ensure the final solution aligns with stakeholders' real needs.
+* **Web and Enterprise Application Development:** Covers everything from full-stack development with modern client and server technologies to the design of scalable enterprise architectures, persistence patterns, middleware integration, and deployment of robust solutions in corporate environments.
+* **Professional Practice of Computing:** Prepares for the working world by addressing professional ethics, current legislation, civil and criminal liability, in addition to the regulatory frameworks and standards that govern the profession and engineering projects in today's society.
+
+### 🚀 Current Status and TFG
+I am currently in the **final stage of my degree**, balancing the last remaining subjects with the development of my **Final Degree Project (TFG)**. 
+
+This final project represents the culmination of my studies and is where I am applying everything I have learned over the years. It focuses on the development of a cross-platform mobile solution designed for smart parking management at the University of Jaén. The main objective is to optimize vehicle flow and improve the end-user experience. Furthermore, the system is designed to be scalable, allowing for the future integration of computer vision modules for real-time free space detection, as well as data processing for license plate recognition and capacity control.
+
+**Note:** Once completed and defended, you will be able to consult all the details, code, and technical report in the [Projects](/en/projects) tab.
