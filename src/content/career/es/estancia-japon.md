@@ -37,126 +37,126 @@ La calma, el respeto, el perfecto equilibrio entre lo tradicional y lo contempor
 Aunque residía en Ibaraki, una ciudad a medio camino entre Osaka y Kyoto, aproveché los días libres en los que no tenía clase para viajar por el país y descubrir lugares maravillosos. A continuación muestro algunas fotos realizadas por mí mismo durante mi estancia en Japón.
 
 <div class="relative w-full max-w-lg mx-auto mt-8 mb-12" id="carousel-japon">
-<div class="relative mx-12 overflow-hidden rounded-2xl shadow-xl aspect-[3/4] bg-gray-900">
+  <div class="relative mx-12 overflow-hidden rounded-2xl shadow-xl aspect-[3/4]">
     
-<div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 z-10">
-    <img src="/images/torre-tokyo.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Ritsumeikan" />
-    <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    🗼 Torre de Tokyo
-    </div>
-</div>
+  <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 z-10">
+      <img src="/images/torre-tokyo.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Ritsumeikan" />
+      <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
+      🗼 Torre de Tokyo
+      </div>
+  </div>
 
-<div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
-    <img src="/images/shibuya-crossing.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Entrada" />
-    <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    🚶🏽 Cruce de Shibuya — Tokyo
-    </div>
-</div>
+  <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
+      <img src="/images/shibuya-crossing.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Entrada" />
+      <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
+      🚶🏽 Cruce de Shibuya — Tokyo
+      </div>
+  </div>
 
-<div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
-    <img src="/images/fuji.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
-    <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    🗻 Monte Fuji
-    </div>
-</div>
+  <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
+      <img src="/images/fuji.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
+      <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
+      🗻 Monte Fuji
+      </div>
+  </div>
 
-<div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
-    <img src="/images/Kiyomizu-dera-kyoto.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Jardines" />
-    <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    🍁 Templo Kiyomizu-dera — Kyoto
-    </div>
-</div>
+  <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
+      <img src="/images/Kiyomizu-dera-kyoto.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Jardines" />
+      <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
+      🍁 Templo Kiyomizu-dera — Kyoto
+      </div>
+  </div>
 
-<div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
-    <img src="/images/kyoto2.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Jardines" />
-    <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    🇯🇵 Templo Kiyomizu-dera — Kyoto
-    </div>
-</div>
+  <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
+      <img src="/images/kyoto2.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Jardines" />
+      <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
+      🇯🇵 Templo Kiyomizu-dera — Kyoto
+      </div>
+  </div>
 
-<div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
-    <img src="/images/castillo-osaka.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
-    <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    🏯 Castillo de Osaka
-    </div>
-</div>
+  <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
+      <img src="/images/castillo-osaka.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
+      <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
+      🏯 Castillo de Osaka
+      </div>
+  </div>
 
-<div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
-    <img src="/images/tokyo1.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
-    <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    🌸 Floración de cerezos — Tokyo
-    </div>
-</div>
+  <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
+      <img src="/images/tokyo1.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
+      <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
+      🌸 Floración de cerezos — Tokyo
+      </div>
+  </div>
 
-<div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
-    <img src="/images/kyoto3.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
-    <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    🏮 Festival Gion Matsuri — Kyoto
-    </div>
-</div>
+  <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
+      <img src="/images/kyoto3.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
+      <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
+      🏮 Festival Gion Matsuri — Kyoto
+      </div>
+  </div>
 
-<div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
-    <img src="/images/Fushimi-Inari-kyoto.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
-    <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    ⛩️ Templo Fushimi Inari-taisha — Kyoto
-    </div>
-</div>
+  <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
+      <img src="/images/Fushimi-Inari-kyoto.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
+      <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
+      ⛩️ Templo Fushimi Inari-taisha — Kyoto
+      </div>
+  </div>
 
-<div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
-    <img src="/images/panasonic-stadium.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
-    <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    🏟️ Panasonic Stadium — Osaka
-    </div>
-</div>
+  <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
+      <img src="/images/panasonic-stadium.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
+      <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
+      🏟️ Panasonic Stadium — Osaka
+      </div>
+  </div>
 
-<div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
-    <img src="/images/expo-park-osaka.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
-    <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    ☀️ Expo Park — Osaka
-    </div>
-</div>
+  <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
+      <img src="/images/expo-park-osaka.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
+      <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
+      ☀️ Expo Park — Osaka
+      </div>
+  </div>
 
-<div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
-    <img src="/images/osaka1.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
-    <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    🌉 Puerta en el cielo — Osaka
-    </div>
-</div>
+  <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
+      <img src="/images/osaka1.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
+      <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
+      🌉 Puerta en el cielo — Osaka
+      </div>
+  </div>
 
-<div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
-    <img src="/images/nara1.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
-    <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    🦌 Parque de Nara
-    </div>
-</div>
+  <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
+      <img src="/images/nara1.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
+      <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
+      🦌 Parque de Nara
+      </div>
+  </div>
 
-<div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
-    <img src="/images/kyoto-rural.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
-    <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    🔰 Taller Honda — Kyoto
-    </div>
-</div>
+  <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
+      <img src="/images/kyoto-rural.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
+      <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
+      🔰 Taller Honda — Kyoto
+      </div>
+  </div>
 
-<div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
-    <img src="/images/ibaraki.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
-    <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    🌈 Ibaraki — Osaka
-    </div>
-</div>
+  <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
+      <img src="/images/ibaraki.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
+      <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
+      🌈 Ibaraki — Osaka
+      </div>
+  </div>
 
-<div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
-    <img src="/images/monumento-paz-hiroshima.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
-    <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    🕊️ Monumento de la paz — Hiroshima
-    </div>
-</div>
+  <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
+      <img src="/images/monumento-paz-hiroshima.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
+      <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
+      🕊️ Monumento de la paz — Hiroshima
+      </div>
+  </div>
 
-<div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
-    <img src="/images/torre-fukuoka.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
-    <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
-    🏙️ Torre de Fukuoka
-    </div>
-</div>
+  <div class="carousel-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
+      <img src="/images/torre-fukuoka.jpeg" class="absolute block w-full h-full object-cover border-none m-0" alt="Edificio Principal" />
+      <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 text-sm backdrop-blur-sm">
+      🏙️ Torre de Fukuoka
+      </div>
+  </div>
 
   </div>
 
