@@ -9,7 +9,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   prefetch: {
     prefetchAll: true,
-    defaultStrategy: 'hover' // Precarga cuando el ratón pasa por encima
+    defaultStrategy: 'hover'
   },
   site: "https://nola01.github.io",
   integrations: [mdx(), sitemap(), solidJs(), tailwind({ applyBaseStyles: false })],
