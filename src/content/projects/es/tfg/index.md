@@ -11,7 +11,7 @@ tags:
 repoURL: ""
 ---
 
-### 🚀 Sobre el proyecto
+### 🚀 Sobre el Proyecto
 Este proyecto nace de la necesidad de mejorar la experiencia de usuario en el parking de la **Universidad de Jaén**. 
 
 Consiste en una solución móvil diseñada para la **gestión inteligente del estacionamiento**, permitiendo la optimización del flujo de vehículos. El sistema está concebido para ser escalable, permitiendo la integración futura de **módulos de visión artificial** para la detección de plazas libres en tiempo real, así como el procesamiento de datos para el reconocimiento de matrículas y control de aforo.

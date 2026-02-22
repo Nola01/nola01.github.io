@@ -16,7 +16,7 @@ Este proyecto cuenta con dos reposotorios:
 * [Repositorio "Read it!" — Frontend](https://github.com/Nola01/read_it_app_-front-)
 * [Repositorio "Read it!" — Backend](https://github.com/Nola01/read_it_app_-back-)
 
-### 🚀 Sobre el proyecto
+### 🚀 Sobre el Proyecto
 **'Read it!'** fue mi proyecto final del Ciclo Formativo de Grado Superior en **Desarrollo de Aplicaciones Multiplataforma (DAM)**. El objetivo fue digitalizar la gestión de las lecturas obligatorias en centros educativos, facilitando la interacción entre profesores y alumnos.
 
 La aplicación permite a los docentes asignar libros mediante **itinerarios personalizados**, mientras que los alumnos disponen de un entorno intuitivo para consultar sus tareas, fechas límite y detalles de los libros asignados.

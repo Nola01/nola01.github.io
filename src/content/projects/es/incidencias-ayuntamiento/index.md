@@ -11,7 +11,7 @@ tags:
 repoURL: "https://github.com/Nola01/incidencias-ayuntamiento/tree/main"
 ---
 
-### 🚀 Sobre el proyecto
+### 🚀 Sobre el Proyecto
 Este proyecto consiste en el desarrollo del **núcleo lógico (Backend)** para una plataforma de gestión de incidencias locales. Fue realizado como un **proyecto en equipo compuesto por 3 personas**, lo que permitió aplicar metodologías de desarrollo colaborativo y control de versiones mediante Git.
 
 El sistema implementa una lógica de negocio donde los ciudadanos pueden registrarse y gestionar su historial de avisos, mientras que la administración posee el control total sobre el ciclo de vida de cada incidencia para una gestión eficiente de los servicios municipales.

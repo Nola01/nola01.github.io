@@ -11,7 +11,7 @@ tags:
 repoURL: "https://github.com/Nola01/artificial-intelligence-python-scripts"
 ---
 
-### 🚀 Sobre el proyecto
+### 🚀 Sobre el Laboratorio
 Este laboratorio reúne una serie de desarrollos fundamentales realizados durante mi estancia académica en **Japón**. El objetivo principal fue profundizar en cómo los sistemas inteligentes perciben su entorno y toman decisiones basadas en reglas lógicas y modelos matemáticos.
 
 ### 🛠️ Tecnologías y Metodologías

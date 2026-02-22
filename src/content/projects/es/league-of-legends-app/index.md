@@ -10,7 +10,7 @@ tags:
 repoURL: "https://github.com/Nola01/league-of-legends-app"
 ---
 
-### 🚀 Sobre el proyecto
+### 🚀 Sobre el Proyecto
 Esta aplicación es una herramienta indispensable para jugadores de **League of Legends**, diseñada como una "wiki" interactiva. El proyecto destaca por su capacidad de respuesta y por integrar un sistema completo de gestión de datos en tiempo real.
 
 No solo se limita a listar información estática, sino que permite a los usuarios interactuar con el ecosistema de campeones, personalizando su experiencia mediante funciones de persistencia de datos.
