@@ -12,7 +12,7 @@ description: "Una estancia de un año como estudiante internacional en Japón en
 
 Mi estancia en la [**Ritsumeikan University**](https://en.ritsumei.ac.jp) no fue solo un intercambio académico, sino una inmersión total en la cultura japonesa.
 
-### 🏛️ Campus y Vida Académica
+### 🏫 Campus y Vida Académica
 El campus de Osaka-Ibaraki es impresionante. Cuenta con unas instalaciones de vanguardia prácticamente nuevas, y muchas zonas comúnes para relajarse, estudiar o charlar.
 
 Tuve la oportunidad de convivir con otros estudiantes internacionales, así como conocerlos en la **BBP** ([Beyond Borders Plaza](https://www.ritsumei.ac.jp/bbp/)), un espacio de la universidad gestionado en gran parte por los propios alumnos. Aquí, entre otras actividades, pude participar en un intercambio lingüístico y cultural con otros estudiantes, en los que yo les enseñaba español y la cultura española mientras ellos hacían lo propio con su país.
