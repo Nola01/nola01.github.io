@@ -3,7 +3,6 @@ import mdx from "@astrojs/mdx"
 import sitemap from "@astrojs/sitemap"
 import tailwind from "@astrojs/tailwind"
 import solidJs from "@astrojs/solid-js"
-import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,5 +11,19 @@ export default defineConfig({
     defaultStrategy: 'hover'
   },
   site: "https://nola01.github.io",
-  integrations: [mdx(), sitemap(), solidJs(), tailwind({ applyBaseStyles: false })],
+  base: "/",
+  integrations: [
+    mdx(), 
+    sitemap({
+      i18n: {
+        defaultLocale: 'es',
+        locales: {
+          es: 'es',
+          en: 'en',
+        },
+      },
+    }), 
+    solidJs(), 
+    tailwind({ applyBaseStyles: false })
+  ],
 })
