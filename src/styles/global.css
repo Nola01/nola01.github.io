@@ -60,12 +60,10 @@ article {
   @apply prose dark:prose-invert max-w-full pb-12;
 }
 
-/* --- CORRECCIÓN DE IMÁGENES EN ARTÍCULOS --- */
 article img {
-  @apply my-6 block mx-auto; /* Cambiado padding por margin (my-6) para que el borde se pegue a la foto */
+  @apply my-6 block mx-auto; 
 }
 
-/* --- CONFIGURACIÓN GLOBAL DE IMÁGENES --- */
 img {
   @apply rounded-2xl overflow-hidden border border-black/5 dark:border-white/10; /* Borde y redondeado pegados a la imagen */
 }
