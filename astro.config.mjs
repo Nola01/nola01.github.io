@@ -14,16 +14,7 @@ export default defineConfig({
   base: "/",
   integrations: [
     mdx(), 
-    sitemap({
-      filter: (page) => page !== "https://nola01.github.io/" && page !== "https://nola01.github.io",
-      i18n: {
-        defaultLocale: 'es',
-        locales: {
-          es: 'es',
-          en: 'en',
-        },
-      },
-    }), 
+    sitemap(), 
     solidJs(), 
     tailwind({ applyBaseStyles: false })
   ],
