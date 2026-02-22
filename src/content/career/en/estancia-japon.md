@@ -12,7 +12,7 @@ description: "A one-year stay as an international student in Japan within the Ar
 
 My stay at [**Ritsumeikan University**](https://en.ritsumei.ac.jp) was not just an academic exchange, but a total immersion into Japanese culture.
 
-### 🏛️ Campus and Academic Life
+### 🏫 Campus and Academic Life
 The Osaka-Ibaraki campus is impressive. It features state-of-the-art, practically new facilities, and many common areas to relax, study, or chat.
 
 I had the opportunity to live with other international students and meet them at the **BBP** ([Beyond Borders Plaza](https://www.ritsumei.ac.jp/bbp/)), a university space largely managed by the students themselves. Here, among other activities, I participated in a linguistic and cultural exchange with other students, where I taught them about Spanish language and culture while they did the same for their respective countries.
