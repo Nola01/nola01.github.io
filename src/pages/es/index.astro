@@ -13,9 +13,9 @@ const posts = (await getCollection("blog"))
   .slice(0,3)
 
 const projects = (await getCollection("projects"))
-  .filter(project => !project.data.draft)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0,3)
+  .filter(project => project.id.startsWith("es/")) // <--- Esta es la clave
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
 
 const stack = [
   { 
@@ -97,10 +97,11 @@ const stack = [
 
     <div class="animate absolute h-full w-full flex items-center justify-center">
       <div class="flex flex-col items-center justify-center pt-20 sm:pt-0">
-      <div class="animate text-center">
-          <p class="text-gray-400 text-xl">Hola, soy</p>
-          <h1 class="text-4xl sm:text-6xl font-bold text-white">
-            JUANMA NOLASCO </h1>
+        <div class="animate text-center">
+          <p class="text-gray-400 text-xl mb-5">Hola, soy</p>
+          <h1 class="text-4xl sm:text-6xl font-bold text-white mb-5">
+            JUANMA NOLASCO 
+          </h1>
 
           <p class="animate text-center text-lg max-w-2xl mx-auto">
             Estudiante de Ingeniería Informática en la <strong>Universidad de Jaén</strong>.<br/>
