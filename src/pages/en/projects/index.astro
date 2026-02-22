@@ -32,19 +32,25 @@ const estimated_initial_size =
     </div>
   </TopLayout>
   <BottomLayout>
-    <SearchCollection
-      client:load
-      entry_name={"projects"}
-      tags={tags}
-      data={projects}
-      labels={{
-        search: "Search projects",
-        showing: "SHOWING",
-        of: "OF",
-        projects: "PROJECTS",
-        oldest: "OLDEST",
-        newest: "NEWEST"
-      }}
-    />
+    <div
+      id="search-collection-wrapper"
+      class="animate"
+      style={{ minHeight: `${estimated_initial_size}px` }}
+    >
+      <SearchCollection
+        client:load
+        entry_name={"projects"}
+        tags={tags}
+        data={projects}
+        labels={{
+          search: "Search projects",
+          showing: "SHOWING",
+          of: "OF",
+          projects: "PROJECTS",
+          oldest: "OLDEST",
+          newest: "NEWEST"
+        }}
+      />
+    </div>
   </BottomLayout>
 </PageLayout>
