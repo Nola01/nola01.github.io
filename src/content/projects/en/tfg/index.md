@@ -45,6 +45,6 @@ Below, you can watch the application in action, view the complete technical repo
 </div>
 
 <video width="100%" controls style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-  <source src="/demo-uja.mp4" type="video/mp4">
+  <source src="/demo_uja.mp4" type="video/mp4">
   Your browser does not support HTML5 video playback.
 </video>
