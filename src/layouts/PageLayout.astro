@@ -4,19 +4,24 @@ import BaseHead from "@components/BaseHead.astro"
 import Header from "@components/Header.astro"
 import Footer from "@components/Footer.astro"
 import Drawer from "@components/Drawer.astro"
-const { title, description } = Astro.props
 import { SITE } from "@consts"
 import { ViewTransitions } from 'astro:transitions';
+
+const { title, description } = Astro.props
+
+const { pathname } = Astro.url;
+const lang = pathname.startsWith("/en") ? "en" : "es";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <ViewTransitions />
     <BaseHead title={`${title} | ${SITE.TITLE}`} description={description} />
   </head>
   <body transition:animate="none">
-   <Header transition:name="main-header"/>
+   <Header />
+   <Drawer /> 
    <main transition:animate="fade">
       <slot />
    </main>
@@ -25,12 +30,17 @@ import { ViewTransitions } from 'astro:transitions';
 </html>
 
 <script>
-  const links = document.querySelectorAll('a');
-  
-  links.forEach(link => {
-    if (link.hostname !== window.location.hostname) {
-      link.setAttribute('target', '_blank');
-      link.setAttribute('rel', 'noopener noreferrer');
-    }
-  });
+  function handleExternalLinks() {
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+      if (link.hostname !== window.location.hostname) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+      }
+    });
+  }
+
+  handleExternalLinks();
+
+  document.addEventListener("astro:after-swap", handleExternalLinks);
 </script>
